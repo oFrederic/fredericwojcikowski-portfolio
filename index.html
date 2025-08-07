@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Performance optimizations -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preconnect for critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical font preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- SEO and Social Meta Tags -->
+    <title>Modern React Portfolio - Performance Optimized</title>
+    <meta name="description" content="A high-performance portfolio built with React 19, TypeScript, Vite, and cutting-edge CSS features for optimal user experience and Core Web Vitals.">
+    <meta name="keywords" content="React, TypeScript, Portfolio, Performance, Web Development, Modern CSS">
+    <meta name="author" content="Portfolio Developer">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-portfolio-url.com/">
+    
+    <!-- Language and region -->
+    <meta name="language" content="en">
+    <meta name="geo.region" content="US">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Portfolio Developer",
+      "jobTitle": "Full Stack Developer",
+      "description": "Modern web developer specializing in React, TypeScript, and performance optimization",
+      "url": "https://your-portfolio-url.com/",
+      "sameAs": [
+        "https://github.com/yourusername",
+        "https://linkedin.com/in/yourusername"
+      ],
+      "knowsAbout": [
+        "React",
+        "TypeScript", 
+        "Web Development",
+        "Performance Optimization",
+        "Modern CSS"
+      ]
+    }
+    </script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-url.com/">
+    <meta property="og:title" content="Modern React Portfolio - Performance Optimized">
+    <meta property="og:description" content="A high-performance portfolio showcasing modern web development practices.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-portfolio-url.com/">
+    <meta property="twitter:title" content="Modern React Portfolio - Performance Optimized">
+    <meta property="twitter:description" content="A high-performance portfolio showcasing modern web development practices.">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Performance hints -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Critical CSS will be inlined here by build process -->
+    <style>
+      /* Critical above-the-fold styles */
+      #root {
+        min-height: 100vh;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      
+      /* Loading state to prevent FOUC */
+      .app-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        color: white;
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+      
+      /* Hide loading state when React hydrates */
+      #root:not(:empty) + .app-loading {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Fallback loading state for initial render -->
+    <div class="app-loading">
+      <div style="text-align: center;">
+        <div style="width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+        <p>Loading Portfolio...</p>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration for PWA features -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => console.log('SW registered'))
+            .catch(error => console.log('SW registration failed'));
+        });
+      }
+    </script>
+  </body>
+</html>

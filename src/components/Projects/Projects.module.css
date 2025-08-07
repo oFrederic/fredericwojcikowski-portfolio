@@ -1,0 +1,369 @@
+/* Projects Component - Modern CSS + CSS Modules */
+
+.projectsSection {
+    container-type: inline-size;
+    padding: var(--space-5xl) 0;
+    background: var(--color-background);
+    position: relative;
+    
+    /* Subtle background pattern */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, var(--color-primary) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, var(--color-secondary) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.03;
+      z-index: 0;
+    }
+    
+    & .sectionHeader {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: var(--space-5xl);
+      
+      & .sectionTitle {
+        font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text);
+        margin-bottom: var(--space-lg);
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 3px;
+          background: var(--gradient-primary);
+          border-radius: var(--radius-full);
+        }
+      }
+      
+      & .sectionSubtitle {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: var(--line-height-relaxed);
+      }
+    }
+    
+    & .projectsGrid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: var(--space-2xl);
+      
+      /* Responsive grid using container queries */
+      @container (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3xl);
+      }
+      
+      @container (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  
+  .projectCard {
+    container-type: inline-size;
+    background: var(--color-surface);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    position: relative;
+    
+    /* Hover effects */
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      
+      & .projectImage img {
+        transform: scale(1.05);
+      }
+      
+      & .projectOverlay {
+        opacity: 1;
+      }
+    }
+    
+    /* Focus management */
+    &:focus-within {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--color-primary), var(--shadow-xl);
+    }
+    
+    & .projectImage {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: var(--gradient-subtle);
+      
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--transition-slow);
+      }
+      
+      & .projectOverlay {
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-primary);
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-lg);
+        transition: opacity var(--transition-normal);
+        
+        & .overlayButton {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+          border-radius: var(--radius-full);
+          color: var(--color-primary);
+          text-decoration: none;
+          transition: all var(--transition-fast);
+          backdrop-filter: blur(10px);
+          
+          &:hover {
+            background: var(--color-surface);
+            transform: scale(1.1);
+          }
+          
+          &:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-surface) 80%, transparent);
+          }
+        }
+      }
+      
+      & .projectStatus {
+        position: absolute;
+        top: var(--space-lg);
+        right: var(--space-lg);
+        padding: var(--space-xs) var(--space-md);
+        background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+        color: var(--color-primary);
+        border-radius: var(--radius-full);
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-semibold);
+        backdrop-filter: blur(10px);
+        
+        &.featured {
+          background: var(--gradient-primary);
+          color: white;
+        }
+      }
+    }
+    
+    & .projectContent {
+      padding: var(--space-2xl);
+      
+      @container (max-width: 320px) {
+        padding: var(--space-lg);
+      }
+      
+      & .projectTitle {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text);
+        margin-bottom: var(--space-md);
+        line-height: var(--line-height-tight);
+        
+        & a {
+          color: inherit;
+          text-decoration: none;
+          transition: color var(--transition-fast);
+          
+          &:hover {
+            color: var(--color-primary);
+          }
+          
+          &:focus-visible {
+            outline: none;
+            color: var(--color-primary);
+            text-decoration: underline;
+          }
+        }
+      }
+      
+      & .projectDescription {
+        font-size: var(--font-size-base);
+        color: var(--color-text-muted);
+        line-height: var(--line-height-relaxed);
+        margin-bottom: var(--space-xl);
+      }
+      
+      & .projectTechStack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-xl);
+        
+        & .techTag {
+          padding: var(--space-xs) var(--space-sm);
+          background: var(--color-background-alt);
+          color: var(--color-text);
+          border-radius: var(--radius-md);
+          font-size: var(--font-size-sm);
+          font-weight: var(--font-weight-medium);
+          
+          /* Different colors for different tech types */
+          &[data-type="frontend"] {
+            background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+            color: var(--color-primary);
+          }
+          
+          &[data-type="backend"] {
+            background: color-mix(in srgb, var(--color-secondary-dark) 10%, transparent);
+            color: var(--color-secondary);
+          }
+          
+          &[data-type="database"] {
+            background: color-mix(in srgb, var(--color-success) 10%, transparent);
+            color: var(--color-success-dark);
+          }
+          
+          &[data-type="tool"] {
+            background: color-mix(in srgb, var(--color-warning) 10%, transparent);
+            color: var(--color-warning-dark);
+          }
+        }
+      }
+      
+      & .projectActions {
+        display: flex;
+        gap: var(--space-md);
+        
+        & .actionButton {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-xs);
+          padding: var(--space-sm) var(--space-lg);
+          border-radius: var(--radius-lg);
+          font-size: var(--font-size-sm);
+          font-weight: var(--font-weight-medium);
+          text-decoration: none;
+          transition: all var(--transition-fast);
+          
+          &.primary {
+            background: var(--color-primary);
+            color: white;
+            
+            &:hover {
+              background: var(--color-primary-dark);
+              transform: translateY(-1px);
+            }
+          }
+          
+          &.secondary {
+            background: var(--color-background-alt);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            
+            &:hover {
+              background: var(--color-surface-elevated);
+              border-color: var(--color-primary);
+            }
+          }
+          
+          &:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+  
+  /* Featured project styling */
+  .projectCard.featured {
+    & .projectTitle {
+      background: var(--gradient-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: var(--font-weight-black);
+    }
+  }
+
+/* Loading state */
+.projectCard.loading {
+    & .projectImage {
+      background: linear-gradient(
+        90deg,
+        var(--color-background-alt) 0%,
+        var(--color-surface-elevated) 50%,
+        var(--color-background-alt) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    
+    & .projectContent {
+      & .projectTitle,
+      & .projectDescription {
+        background: linear-gradient(
+          90deg,
+          var(--color-background-alt) 0%,
+          var(--color-surface-elevated) 50%,
+          var(--color-background-alt) 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+        color: transparent;
+        border-radius: var(--radius-sm);
+      }
+    }
+  }
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes featuredGlow {
+  0% {
+    box-shadow: 
+      var(--shadow-lg),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 20%, transparent),
+      0 0 30px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  }
+  100% {
+    box-shadow: 
+      var(--shadow-xl),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 30%, transparent),
+      0 0 40px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+}
+
+/* Print styles */
+@media print {
+  .projectCard {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid var(--color-border) !important;
+    
+    & .projectOverlay {
+      display: none !important;
+    }
+  }
+}
