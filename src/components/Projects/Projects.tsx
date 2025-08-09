@@ -19,8 +19,8 @@ const defaultProjects: Project[] = [
       { name: 'CSS Modules', type: 'frontend' },
       { name: 'Container Queries', type: 'frontend' }
     ],
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://fredericwojcikowski-portfolio.netlify.app/',
+    githubUrl: 'https://github.com/oFrederic/fredericwojcikowski-portfolio',
     status: PROJECT_STATUSES.FEATURED,
     featured: true
   },
