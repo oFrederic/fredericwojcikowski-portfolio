@@ -13,6 +13,7 @@ export default defineConfig({
       brotliSize: true,
       gzipSize: true
     })
+    // Image optimization is done manually - see scripts/optimize-images.cjs
   ],
   css: {
     modules: {

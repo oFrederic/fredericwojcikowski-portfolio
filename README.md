@@ -74,6 +74,99 @@ npm run lighthouse   # Run performance audit
 
 ---
 
+## 📷 Adding Project Screenshots
+
+### Quick Setup
+1. **Add your screenshot image** to the `public/images/projects/` folder
+2. **Optimize the image** by running `npm run optimize-images`
+3. **Update your project data** in `src/components/Projects/Projects.tsx`
+
+### Step-by-Step Guide
+
+#### 1. Take Your Screenshot
+**Easy browser method** (recommended):
+1. Run `npm run preview` to start your site
+2. Open `http://localhost:4173` in Chrome/Edge
+3. Press `F12` → `Ctrl+Shift+P` → type "screenshot"
+4. Select **"Capture full size screenshot"**
+5. Save to `public/images/projects/`
+
+#### 2. Optimize Your Images 
+**Run the optimization script** (this creates WebP versions):
+```bash
+npm run optimize-images
+```
+
+**What this does:**
+- Creates WebP versions of PNG/JPG files (typically 70-90% smaller!)
+- Keeps original files as fallbacks for older browsers
+- Only processes new/changed images (smart caching)
+- Works for both projects and profile folders
+
+**Example output:**
+```
+✅ portfolio-screenshot.png → portfolio-screenshot.webp
+   802.6 KB → 27.2 KB (96.6% smaller)
+```
+
+#### 3. Update Your Project
+In `src/components/Projects/Projects.tsx`, find your project in the `defaultProjects` array and add the `image` property:
+
+```tsx
+{
+  id: '1',
+  title: 'My Awesome Project',
+  description: 'A cool project I built...',
+  image: '/images/projects/my-project-screenshot.png', // ✅ Add this line
+  imageAlt: 'Screenshot of My Awesome Project homepage', // ✅ And this line (optional)
+  techStack: [
+    // your tech stack...
+  ],
+  // rest of your project data...
+}
+```
+
+#### 4. That's It! 
+- **Modern browsers**: Automatically load tiny WebP versions
+- **Older browsers**: Fall back to original PNG/JPG files
+- **Lazy loading**: Images only load when scrolled into view
+
+### 🚀 **Image Optimization Features**
+Your images get **optimized manually** with:
+- ✅ **WebP conversion** (70-90% smaller files)
+- ✅ **Smart fallbacks** (PNG/JPG for older browsers)
+- ✅ **Lazy loading** (loads when scrolled into view)
+- ✅ **Responsive sizing** (different sizes for mobile/desktop)
+- ✅ **Manual control** (you decide when to optimize)
+
+### 💡 Pro Tips
+
+#### Best Practices
+- **File size**: Any size is fine - optimization script handles it
+- **Formats**: PNG, JPG work best (avoid GIF for screenshots)
+- **Naming**: Use descriptive names like `ecommerce-homepage.png`
+- **Alt text**: Always add `imageAlt` for accessibility
+
+#### When to Run Optimization
+```bash
+# After adding new screenshots
+npm run optimize-images
+
+# Before deploying to production
+npm run optimize-images && npm run build
+```
+
+#### File Structure After Optimization
+```
+public/images/projects/
+├── my-project.png        ← Original (fallback)
+├── my-project.webp       ← Optimized (auto-created)
+├── another-project.jpg   ← Original (fallback)  
+└── another-project.webp  ← Optimized (auto-created)
+```
+
+---
+
 ## 📊 Performance Metrics
 
 <div align="center">

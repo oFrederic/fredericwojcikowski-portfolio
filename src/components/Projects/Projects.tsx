@@ -1,6 +1,7 @@
 import React from 'react'
 import type { ProjectsProps, Project, ProjectStatus } from '../../types'
 import { PROJECT_STATUSES } from '../../types'
+import OptimizedImage from '../OptimizedImage'
 import styles from './Projects.module.css'
 
 // Demo project data
@@ -9,6 +10,8 @@ const defaultProjects: Project[] = [
     id: '1',
     title: 'Modern Portfolio Website',
     description: 'A high-performance portfolio built with React 19, TypeScript, and cutting-edge CSS features including container queries, CSS nesting, and CSS Modules for optimal user experience.',
+    image: '/images/projects/portfolio-website-screenshot.png', // Example: Add your screenshot here
+    imageAlt: 'Screenshot of Modern Portfolio Website homepage showing hero section and project cards',
     techStack: [
       { name: 'React 19', type: 'frontend' },
       { name: 'TypeScript', type: 'frontend' },
@@ -126,10 +129,13 @@ const Projects: React.FC<ProjectsProps> = ({
       {/* Project Image */}
       <div className={styles.projectImage}>
         {project.image ? (
-          <img 
+          <OptimizedImage 
             src={project.image} 
+            webpSrc={project.image.replace(/\.(png|jpg|jpeg)$/i, '.webp')}
             alt={project.imageAlt || `${project.title} screenshot`}
-            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={project.featured}
+            className={styles.projectImageImg}
           />
         ) : (
           // Placeholder gradient for demo

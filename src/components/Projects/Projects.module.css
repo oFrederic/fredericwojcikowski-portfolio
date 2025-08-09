@@ -86,9 +86,7 @@
       transform: translateY(-8px);
       box-shadow: var(--shadow-xl);
       
-      & .projectImage img {
-        transform: scale(1.05);
-      }
+      /* Image zoom effect removed for better UX */
       
       & .projectOverlay {
         opacity: 1;
@@ -107,11 +105,18 @@
       overflow: hidden;
       background: var(--gradient-subtle);
       
-      & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      & img,
+      & .projectImageImg {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
         transition: transform var(--transition-slow);
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
       }
       
       & .projectOverlay {
