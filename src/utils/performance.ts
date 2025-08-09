@@ -53,21 +53,7 @@ export const addResourceHints = (): void => {
   })
 }
 
-/**
- * Prefetch resources for better navigation
- */
-export const prefetchResources = (urls: readonly string[]): void => {
-  if (typeof window === 'undefined' || !('requestIdleCallback' in window)) return
 
-  requestIdleCallback(() => {
-    urls.forEach(url => {
-      const link = document.createElement('link')
-      link.rel = 'prefetch'
-      link.href = url
-      document.head.appendChild(link)
-    })
-  })
-}
 
 // =============================================================================
 // Intersection Observer Utilities
@@ -92,39 +78,6 @@ export const createIntersectionObserver = (
 // =============================================================================
 // Performance Utilities
 // =============================================================================
-
-/**
- * Debounce function for performance optimization
- */
-export const debounce = <T extends (...args: unknown[]) => unknown>(
-  func: T,
-  wait: number
-): ((...args: Parameters<T>) => void) => {
-  let timeout: ReturnType<typeof setTimeout> | undefined
-  
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeout)
-    timeout = setTimeout(() => func(...args), wait)
-  }
-}
-
-/**
- * Throttle function for performance optimization
- */
-export const throttle = <T extends (...args: unknown[]) => unknown>(
-  func: T,
-  wait: number
-): ((...args: Parameters<T>) => void) => {
-  let inThrottle: boolean
-  
-  return (...args: Parameters<T>) => {
-    if (!inThrottle) {
-      func(...args)
-      inThrottle = true
-      setTimeout(() => inThrottle = false, wait)
-    }
-  }
-}
 
 /**
  * Smooth scroll to element with performance optimization
@@ -156,31 +109,6 @@ export const supportsWebP = (): Promise<boolean> => {
     const dataURL = canvas.toDataURL('image/webp')
     resolve(dataURL.indexOf('data:image/webp') === 0)
   })
-}
-
-/**
- * Create an optimized image element with WebP support
- */
-export const createOptimizedImage = async (
-  src: string, 
-  alt: string, 
-  className?: string
-): Promise<HTMLImageElement> => {
-  const img = new Image()
-  const webpSupported = await supportsWebP()
-  
-  // Use WebP if supported and available
-  const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp')
-  img.src = webpSupported ? webpSrc : src
-  img.alt = alt
-  img.loading = 'lazy'
-  img.decoding = 'async'
-  
-  if (className) {
-    img.className = className
-  }
-  
-  return img
 }
 
 // =============================================================================

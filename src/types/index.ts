@@ -170,18 +170,6 @@ export interface ContactProps extends BaseProps {
 // Utility Types
 // =============================================================================
 
-export type Nullable<T> = T | null
-export type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
-export type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]
-}
-
-// Loading states
-export type LoadingState = 'idle' | 'loading' | 'success' | 'error'
-
-// Theme types
-export type Theme = 'light' | 'dark' | 'auto'
-
 // Intersection Observer options
 export interface IntersectionConfig {
   root?: Element | null
@@ -199,16 +187,3 @@ export const PROJECT_STATUSES = {
   IN_PROGRESS: 'in-progress',
 } as const
 
-export const TECH_TYPES = {
-  FRONTEND: 'frontend',
-  BACKEND: 'backend',
-  DATABASE: 'database',
-  TOOL: 'tool',
-} as const
-
-export const LOADING_STATES = {
-  IDLE: 'idle',
-  LOADING: 'loading',
-  SUCCESS: 'success',
-  ERROR: 'error',
-} as const
