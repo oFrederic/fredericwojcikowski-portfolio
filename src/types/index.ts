@@ -125,18 +125,7 @@ export interface WebVitalMetric {
 // Component Props Types
 // =============================================================================
 
-export interface HeroProps extends BaseProps {
-  title?: string
-  subtitle?: string
-  primaryAction?: {
-    text: string
-    href: string
-  }
-  secondaryAction?: {
-    text: string
-    href: string
-  }
-}
+
 
 export interface ProjectsProps extends BaseProps {
   title?: string

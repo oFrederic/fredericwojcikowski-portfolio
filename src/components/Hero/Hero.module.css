@@ -103,27 +103,21 @@
     
     & .heroSubtitle {
       font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-2xl));
-      color: color-mix(in srgb, var(--color-text) 85%, transparent);
       line-height: var(--line-height-relaxed);
       font-weight: var(--font-weight-normal);
       
-      /* Modern text styling with CSS custom properties */
-      & .highlight {
-        font-weight: var(--font-weight-semibold);
-        color: var(--color-text);
-        position: relative;
-        
-        &::before {
-          content: '';
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          right: 0;
-          height: 2px;
-          background: color-mix(in srgb, var(--color-text) 40%, transparent);
-          border-radius: var(--radius-full);
-        }
-      }
+      /* Apply same gradient as the title for consistent styling */
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f1f5f9 30%,
+        #e2e8f0 60%,
+        #cbd5e1 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
     }
     
     & .heroActions {

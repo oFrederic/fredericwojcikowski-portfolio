@@ -1,16 +1,8 @@
 import React from 'react'
 import { smoothScrollTo } from '../../utils/performance'
-import type { HeroProps } from '../../types'
 import styles from './Hero.module.css'
 
-const Hero: React.FC<HeroProps> = ({
-  title,
-  subtitle,
-  primaryAction,
-  secondaryAction,
-  className,
-  'data-testid': testId
-}) => {
+const Hero: React.FC = () => {
   const handleScroll = (href: string): void => {
     if (href.startsWith('#')) {
       smoothScrollTo(href)
@@ -19,36 +11,12 @@ const Hero: React.FC<HeroProps> = ({
     }
   }
 
-  const defaultTitle = (
-    <>
-      <span>Frederic </span>
-      <span className={styles.highlight}>Wojcikowski</span>
-    </>
-  )
 
-  const defaultSubtitle = (
-    <>
-      Frontend Engineer specializing in{' '}
-      <span className={styles.highlight}>React, Vue.js</span>{' '}
-      and legacy modernization. 4+ years transforming complex ideas into scalable web applications across Japanese and international markets.
-    </>
-  )
-
-  const defaultPrimaryAction = {
-    text: 'Explore Projects',
-    href: '#projects'
-  }
-
-  const defaultSecondaryAction = {
-    text: 'Contact Me', 
-    href: '#contact'
-  }
 
   return (
     <section 
-      className={`${styles.heroSection} ${className || ''}`}
+      className={styles.heroSection}
       aria-label="Hero section"
-      data-testid={testId}
     >
       {/* Animated background */}
       <div className={styles.heroBackground} aria-hidden="true" />
@@ -57,29 +25,29 @@ const Hero: React.FC<HeroProps> = ({
         {/* Hero Content */}
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            {title || defaultTitle}
+            Frederic Wojcikowski
           </h1>
           
           <p className={styles.heroSubtitle}>
-            {subtitle || defaultSubtitle}
+            Frontend Engineer specializing in React, Vue.js and legacy modernization. 4+ years transforming complex ideas into scalable web applications across Japanese and international markets.
           </p>
           
           <div className={styles.heroActions}>
             <button
               className={`${styles.ctaButton} ${styles.primary}`}
-              onClick={() => handleScroll((primaryAction || defaultPrimaryAction).href)}
+              onClick={() => handleScroll('#projects')}
               type="button"
             >
-              {(primaryAction || defaultPrimaryAction).text}
+              Explore Projects
               <span aria-hidden="true">→</span>
             </button>
             
             <button
               className={`${styles.ctaButton} ${styles.secondary}`}
-              onClick={() => handleScroll((secondaryAction || defaultSecondaryAction).href)}
+              onClick={() => handleScroll('#contact')}
               type="button"
             >
-              {(secondaryAction || defaultSecondaryAction).text}
+              Contact Me
             </button>
           </div>
         </div>
