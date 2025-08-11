@@ -15,7 +15,7 @@ export interface BaseProps {
 // Project Types
 // =============================================================================
 
-export type ProjectStatus = 'featured' | 'completed' | 'in-progress'
+export type ProjectStatus = 'completed' | 'in-progress'
 export type TechType = 'frontend' | 'backend' | 'database' | 'tool'
 
 export interface Technology {
@@ -182,7 +182,6 @@ export interface IntersectionConfig {
 // =============================================================================
 
 export const PROJECT_STATUSES = {
-  FEATURED: 'featured',
   COMPLETED: 'completed',
   IN_PROGRESS: 'in-progress',
 } as const

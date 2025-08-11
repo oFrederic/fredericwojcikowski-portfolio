@@ -21,7 +21,7 @@ const defaultProjects: Project[] = [
     ],
     liveUrl: 'https://fredericwojcikowski-portfolio.netlify.app/',
     githubUrl: 'https://github.com/oFrederic/fredericwojcikowski-portfolio',
-    status: PROJECT_STATUSES.FEATURED,
+    status: PROJECT_STATUSES.COMPLETED,
     featured: true
   },
   {
@@ -97,14 +97,13 @@ const defaultProjects: Project[] = [
 ];
 
 const Projects: React.FC<ProjectsProps> = ({
-  title = "Featured Projects",
+  title = "My Projects",
   subtitle = "A showcase of recent work demonstrating modern web development practices, performance optimization, and user-centered design.",
   projects = defaultProjects,
   loading = false
 }) => {
   const getStatusText = (status: ProjectStatus): string => {
     const statusMap: Record<ProjectStatus, string> = {
-      [PROJECT_STATUSES.FEATURED]: 'Featured',
       [PROJECT_STATUSES.COMPLETED]: 'Completed',
       [PROJECT_STATUSES.IN_PROGRESS]: 'In Progress',
     }
@@ -124,8 +123,15 @@ const Projects: React.FC<ProjectsProps> = ({
   const renderProjectCard = (project: Project) => (
     <article
       key={project.id}
-      className={`${styles.projectCard} ${project.featured ? styles.featured : ''} ${loading ? styles.loading : ''}`}
+      className={`${styles.projectCard} ${loading ? styles.loading : ''}`}
     >
+      {/* Featured Ribbon */}
+      {project.featured && (
+        <div className={styles.featuredRibbon}>
+          Featured
+        </div>
+      )}
+      
       {/* Project Image */}
       <div className={styles.projectImage}>
         {project.image ? (
@@ -165,7 +171,7 @@ const Projects: React.FC<ProjectsProps> = ({
         )}
         
         {/* Project Status Badge */}
-        <div className={`${styles.projectStatus} ${project.featured ? styles.featured : ''}`}>
+        <div className={styles.projectStatus}>
           {getStatusText(project.status)}
         </div>
         

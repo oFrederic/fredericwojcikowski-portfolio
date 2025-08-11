@@ -1,5 +1,48 @@
 /* Projects Component - Modern CSS + CSS Modules */
 
+/* Featured Ribbon */
+.featuredRibbon {
+  position: absolute;
+  top: var(--space-lg);
+  left: calc(-1 * var(--space-sm));
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--space-xs) var(--space-xl);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  
+  /* Ribbon shape */
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 8px 100%);
+  
+  /* Shadow for depth */
+  box-shadow: 
+    0 2px 8px color-mix(in srgb, var(--color-primary) 30%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 20%, transparent);
+  
+  /* Animation */
+  animation: ribbonPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes ribbonPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 
+      0 2px 8px color-mix(in srgb, var(--color-primary) 30%, transparent),
+      inset 0 1px 0 color-mix(in srgb, white 20%, transparent);
+    filter: brightness(1);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 
+      0 6px 20px color-mix(in srgb, var(--color-primary) 60%, transparent),
+      inset 0 2px 0 color-mix(in srgb, white 40%, transparent);
+    filter: brightness(1.1);
+  }
+}
+
 .projectsSection {
     container-type: inline-size;
     padding: var(--space-5xl) 0;
@@ -166,11 +209,6 @@
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight-semibold);
         backdrop-filter: blur(10px);
-        
-        &.featured {
-          background: var(--gradient-primary);
-          color: white;
-        }
       }
     }
     
@@ -294,16 +332,7 @@
     }
   }
   
-  /* Featured project styling */
-  .projectCard.featured {
-    & .projectTitle {
-      background: var(--gradient-primary);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: var(--font-weight-black);
-    }
-  }
+
 
 /* Loading state */
 .projectCard.loading {
@@ -342,21 +371,6 @@
   }
   100% {
     background-position: 200% 0;
-  }
-}
-
-@keyframes featuredGlow {
-  0% {
-    box-shadow: 
-      var(--shadow-lg),
-      0 0 0 1px color-mix(in srgb, var(--color-primary) 20%, transparent),
-      0 0 30px color-mix(in srgb, var(--color-primary) 15%, transparent);
-  }
-  100% {
-    box-shadow: 
-      var(--shadow-xl),
-      0 0 0 1px color-mix(in srgb, var(--color-primary) 30%, transparent),
-      0 0 40px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
 
