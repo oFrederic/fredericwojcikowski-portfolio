@@ -103,14 +103,14 @@
     
     & .heroSubtitle {
       font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-2xl));
-      color: color-mix(in srgb, var(--color-surface) 90%, transparent);
+      color: color-mix(in srgb, var(--color-text) 85%, transparent);
       line-height: var(--line-height-relaxed);
       font-weight: var(--font-weight-normal);
       
       /* Modern text styling with CSS custom properties */
       & .highlight {
         font-weight: var(--font-weight-semibold);
-        color: var(--color-surface);
+        color: var(--color-text);
         position: relative;
         
         &::before {
@@ -120,7 +120,7 @@
           left: 0;
           right: 0;
           height: 2px;
-          background: color-mix(in srgb, var(--color-surface) 40%, transparent);
+          background: color-mix(in srgb, var(--color-text) 40%, transparent);
           border-radius: var(--radius-full);
         }
       }

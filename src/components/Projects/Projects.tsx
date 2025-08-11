@@ -21,12 +21,12 @@ const defaultProjects: Project[] = [
     ],
     liveUrl: 'https://fredericwojcikowski-portfolio.netlify.app/',
     githubUrl: 'https://github.com/oFrederic/fredericwojcikowski-portfolio',
-    status: PROJECT_STATUSES.COMPLETED,
+    status: PROJECT_STATUSES.IN_PROGRESS,
     featured: true
   },
   {
     id: '2',
-    title: 'E-Commerce Platform',
+    title: 'E-Commerce Platform (Placeholder)',
     description: 'Full-stack e-commerce solution with modern payment integration, real-time inventory management, and advanced analytics dashboard.',
     techStack: [
       { name: 'Next.js', type: 'frontend' },
@@ -40,7 +40,7 @@ const defaultProjects: Project[] = [
   },
   {
     id: '3',
-    title: 'Task Management App',
+    title: 'Task Management App (Placeholder)',
     description: 'Collaborative task management application with real-time updates, team collaboration features, and advanced project tracking.',
     techStack: [
       { name: 'React', type: 'frontend' },
@@ -54,7 +54,7 @@ const defaultProjects: Project[] = [
   },
   {
     id: '4',
-    title: 'AI Content Generator',
+    title: 'AI Content Generator (Placeholder)',
     description: 'AI-powered content generation platform with natural language processing, multiple output formats, and custom model training.',
     techStack: [
       { name: 'Python', type: 'backend' },
@@ -68,7 +68,7 @@ const defaultProjects: Project[] = [
   },
   {
     id: '5',
-    title: 'Analytics Dashboard',
+    title: 'Analytics Dashboard (Placeholder)',
     description: 'Real-time analytics dashboard with interactive charts, data visualization, and automated reporting for business intelligence.',
     techStack: [
       { name: 'Vue.js', type: 'frontend' },
@@ -82,7 +82,7 @@ const defaultProjects: Project[] = [
   },
   {
     id: '6',
-    title: 'Mobile Fitness App',
+    title: 'Mobile Fitness App (Placeholder)',
     description: 'Cross-platform mobile application for fitness tracking, workout planning, and social features with gamification elements.',
     techStack: [
       { name: 'React Native', type: 'frontend' },
