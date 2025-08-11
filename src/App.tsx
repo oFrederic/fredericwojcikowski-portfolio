@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Navigation } from './components';
 import {
   HeroWithSuspense,
   ProjectsWithSuspense,
@@ -21,6 +22,9 @@ function App() {
 
   return (
     <div className="App">
+      {/* Navigation - Fixed at top */}
+      <Navigation />
+      
       {/* Hero Section - Critical above-the-fold content */}
       <HeroWithSuspense />
       

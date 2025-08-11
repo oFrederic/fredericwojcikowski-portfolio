@@ -4,6 +4,8 @@
 @import './variables.css';
 @import './reset.css';
 
+/* Remove body padding since nav will overlay on hero */
+
 /* Base styles - fundamental styles */
 /* Typography scale with fluid sizing */
 .text-xs { font-size: var(--font-size-xs); }

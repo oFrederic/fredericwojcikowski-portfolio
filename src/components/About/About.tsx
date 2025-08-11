@@ -84,7 +84,7 @@ const About: React.FC<AboutProps> = ({
   stats = defaultStats
 }) => {
   return (
-    <section className={styles.aboutSection} aria-labelledby="about-title">
+    <section id="about" className={styles.aboutSection} aria-labelledby="about-title">
       <div className="container">
         <div className={styles.aboutContainer}>
           {/* Profile Section */}

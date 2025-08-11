@@ -109,6 +109,9 @@
   --z-popover: 1060;
   --z-tooltip: 1070;
   
+  /* Layout */
+  --navbar-height: 70px;
+  
   /* Breakpoints (for container queries) */
   --bp-sm: 640px;
   --bp-md: 768px;

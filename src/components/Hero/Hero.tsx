@@ -15,6 +15,7 @@ const Hero: React.FC = () => {
 
   return (
     <section 
+      id="hero"
       className={styles.heroSection}
       aria-label="Hero section"
     >
