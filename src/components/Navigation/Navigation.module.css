@@ -5,14 +5,14 @@
   left: 0;
   right: 0;
   z-index: 9999; /* Higher z-index to ensure it's above hero */
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--color-nav-background-light);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   transition: all var(--transition-normal);
 }
 
 .navigation:hover {
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--color-nav-background-light-hover);
 }
 
 .navContainer {
@@ -69,7 +69,7 @@
 
 .navLinks a:hover {
   color: var(--color-primary);
-  background: rgba(59, 130, 246, 0.05);
+  background: var(--color-primary-light-alpha);
 }
 
 .navLinks a::after {
@@ -112,7 +112,7 @@
 }
 
 .actionButton:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--color-primary-alpha);
   color: var(--color-primary);
   transform: translateY(-1px);
 }
@@ -190,18 +190,24 @@
 }
 
 .dropdownItem:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--color-primary-alpha);
   color: var(--color-primary);
 }
 
 .dropdownItem.selected {
-  background: rgba(59, 130, 246, 0.15);
+  background: var(--color-primary-medium-alpha);
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
 }
 
+.dropdownIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 .dropdownItem.selected:hover {
-  background: rgba(59, 130, 246, 0.2);
+  background: var(--color-primary-heavy-alpha);
 }
 
 .dropdownItem svg {
@@ -227,7 +233,7 @@
 }
 
 .mobileMenuButton:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--color-primary-alpha);
 }
 
 /* Hamburger Icon */
@@ -303,7 +309,7 @@
 }
 
 .mobileMenu a:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--color-primary-alpha);
   color: var(--color-primary);
 }
 
@@ -350,29 +356,45 @@
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .navigation {
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(12px);
-  }
-  
-  .navigation:hover {
-    background: rgba(15, 23, 42, 0.98);
-  }
-  
-  .dropdown {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-  }
-  
-  .dropdown::before {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-  }
-  
-  .mobileMenu {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-  }
+/* Dark theme support */
+.theme-dark .navigation {
+  background: var(--color-nav-background-dark) !important;
+  backdrop-filter: blur(12px);
+}
+
+.theme-dark .navigation:hover {
+  background: var(--color-nav-background-dark-hover) !important;
+}
+
+/* More specific dark theme overrides */
+html.theme-dark .navigation {
+  background: var(--color-nav-background-dark) !important;
+}
+
+html.theme-dark .navigation:hover {
+  background: var(--color-nav-background-dark-hover) !important;
+}
+
+/* Alternative approach using data attributes */
+[data-theme="dark"] .navigation {
+  background: var(--color-nav-background-dark) !important;
+}
+
+[data-theme="dark"] .navigation:hover {
+  background: var(--color-nav-background-dark-hover) !important;
+}
+
+.theme-dark .dropdown {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.theme-dark .dropdown::before {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.theme-dark .mobileMenu {
+  background: var(--color-surface);
+  border-color: var(--color-border);
 }

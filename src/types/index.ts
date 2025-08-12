@@ -3,6 +3,19 @@
 import { type ReactNode } from 'react'
 
 // =============================================================================
+// Theme Types
+// =============================================================================
+
+export type ThemeMode = 'light' | 'dark' | 'system';
+
+export interface ThemeContextType {
+  theme: ThemeMode;
+  setTheme: (theme: ThemeMode) => void;
+  isDark: boolean;
+  isSystem: boolean;
+}
+
+// =============================================================================
 // Common Base Types
 // =============================================================================
 

@@ -146,24 +146,17 @@ const Projects: React.FC<ProjectsProps> = ({
         ) : (
           // Placeholder gradient for demo
           <div
+            className={styles.projectPlaceholder}
             style={{
-              width: '100%',
-              height: '100%',
               background: `linear-gradient(135deg, ${
                 project.techStack[0]?.type === 'frontend' ? 'var(--color-primary)' :
                 project.techStack[0]?.type === 'backend' ? 'var(--color-secondary)' :
-                '#059669'
+                'var(--color-success)'
               }, ${
                 project.techStack[1]?.type === 'frontend' ? 'var(--color-primary)' :
                 project.techStack[1]?.type === 'backend' ? 'var(--color-secondary)' :
-                '#d97706'
-              })`,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: 'var(--font-size-4xl)',
-              fontWeight: 'var(--font-weight-bold)'
+                'var(--color-warning)'
+              })`
             }}
           >
             {project.title.charAt(0)}

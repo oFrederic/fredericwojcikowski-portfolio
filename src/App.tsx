@@ -7,6 +7,7 @@ import {
   ContactWithSuspense
 } from './components/LazyComponents';
 import { preloadCriticalResources, addResourceHints, measureWebVitals } from './utils/performance';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
   useEffect(() => {
@@ -21,18 +22,22 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {/* Navigation - Fixed at top */}
-      <Navigation />
-      
-      {/* Hero Section - Critical above-the-fold content */}
-      <HeroWithSuspense />
-      
-      {/* Below-the-fold sections - lazy loaded */}
-      <ProjectsWithSuspense />
-      <AboutWithSuspense />
-      <ContactWithSuspense />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        {/* Navigation - Fixed at top */}
+        <Navigation />
+        
+        {/* Hero Section - Critical above-the-fold content */}
+        <HeroWithSuspense />
+        
+
+        
+        {/* Below-the-fold sections - lazy loaded */}
+        <ProjectsWithSuspense />
+        <AboutWithSuspense />
+        <ContactWithSuspense />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -77,13 +77,7 @@
       line-height: var(--line-height-tight);
       
       /* Advanced gradient text with modern CSS */
-      background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f1f5f9 30%,
-        #e2e8f0 60%,
-        #cbd5e1 100%
-      );
+      background: var(--gradient-hero-text);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -107,13 +101,7 @@
       font-weight: var(--font-weight-normal);
       
       /* Apply same gradient as the title for consistent styling */
-      background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f1f5f9 30%,
-        #e2e8f0 60%,
-        #cbd5e1 100%
-      );
+      background: var(--gradient-hero-text);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -147,53 +135,53 @@
       /* Primary button variant */
       &.primary {
         background: var(--color-primary);
-        color: #ffffff !important;
+        color: var(--color-hero-text) !important;
         border-color: var(--color-primary);
         backdrop-filter: blur(10px);
-        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        box-shadow: 0 4px 15px var(--color-hero-shadow-primary);
         
         &:hover {
           background: var(--color-primary-dark);
           border-color: var(--color-primary-dark);
-          color: #ffffff !important;
+          color: var(--color-hero-text) !important;
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+          box-shadow: 0 8px 25px var(--color-hero-shadow-primary-hover);
         }
         
         &:active {
           transform: translateY(0);
-          color: #ffffff !important;
-          box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+          color: var(--color-hero-text) !important;
+          box-shadow: 0 2px 10px var(--color-hero-shadow-primary);
         }
       }
       
       /* Secondary button variant */
       &.secondary {
         background: transparent;
-        color: #ffffff !important;
-        border-color: rgba(255, 255, 255, 0.4);
+        color: var(--color-hero-text) !important;
+        border-color: var(--color-hero-overlay-light);
         backdrop-filter: blur(10px);
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px var(--color-hero-shadow-white);
         
         &:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 255, 255, 0.6);
-          color: #ffffff !important;
+          background: var(--color-white-alpha);
+          border-color: var(--color-hero-overlay-light-hover);
+          color: var(--color-hero-text) !important;
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 8px 25px var(--color-hero-shadow-white-hover);
         }
         
         &:active {
           transform: translateY(0);
-          color: #ffffff !important;
-          box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+          color: var(--color-hero-text) !important;
+          box-shadow: 0 2px 10px var(--color-hero-shadow-white);
         }
       }
       
       /* Focus states using modern CSS */
       &:focus-visible {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 3px var(--color-hero-focus-ring);
       }
     }
     
@@ -232,18 +220,18 @@
           width: 70px;
           height: 70px;
           background: radial-gradient(circle at 30% 30%, 
-            rgba(59, 130, 246, 0.15), 
-            rgba(30, 100, 220, 0.1), 
-            rgba(59, 130, 246, 0.05)
+            var(--color-hero-glow-primary), 
+            var(--color-hero-glow-secondary), 
+            var(--color-hero-glow-tertiary)
           );
           backdrop-filter: blur(15px);
-          border: 2px solid rgba(59, 130, 246, 0.4);
+          border: 2px solid var(--color-hero-border-primary);
           border-radius: 50%;
-          color: rgba(59, 130, 246, 0.9);
+                      color: var(--color-hero-text-primary);
           animation: globePulse 4s ease-in-out infinite;
           
           & svg {
-            filter: drop-shadow(0 3px 12px rgba(59, 130, 246, 0.5));
+            filter: drop-shadow(0 3px 12px var(--color-primary-heavy-alpha-4));
           }
           
           &::before {
@@ -252,9 +240,9 @@
             inset: -4px;
             border-radius: 50%;
             background: linear-gradient(45deg, 
-              rgba(59, 130, 246, 0.3),
+              var(--color-primary-heavy-alpha-3),
               transparent,
-              rgba(59, 130, 246, 0.2)
+              var(--color-primary-heavy-alpha-2)
             );
             z-index: -1;
             animation: borderRotate 8s linear infinite;
@@ -266,7 +254,7 @@
             inset: 6px;
             border-radius: 50%;
             background: radial-gradient(circle at 25% 25%, 
-              rgba(59, 130, 246, 0.2), 
+              var(--color-primary-heavy-alpha-2), 
               transparent 50%
             );
             z-index: -1;
@@ -280,7 +268,7 @@
           flex-direction: column;
           align-items: center;
           gap: var(--space-xs);
-          color: rgba(255, 255, 255, 0.9);
+          color: var(--color-hero-text);
           animation: orbit var(--orbit-duration, 20s) linear infinite;
           animation-delay: calc(var(--start-angle, 0deg) / 360deg * var(--orbit-duration, 20s));
           z-index: var(--z-index, 1);
@@ -299,11 +287,11 @@
             width: clamp(28px, 5vw, 36px);
             height: clamp(28px, 5vw, 36px);
             transition: all var(--transition-normal);
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 2px 8px var(--color-hero-shadow-drop));
           }
           
           &:hover {
-            color: var(--color-primary-light);
+            color: var(--color-hero-text-secondary);
             transform: 
               translate(-50%, -50%) 
               rotate(var(--start-angle, 0deg)) 
@@ -350,7 +338,7 @@
           transform: translateY(4px);
           transition: all var(--transition-normal);
           white-space: nowrap;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+          text-shadow: 0 1px 2px var(--color-hero-text-shadow);
         }
       }
     }
@@ -360,7 +348,7 @@
       bottom: var(--space-2xl);
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--color-hero-text-secondary);
       font-size: var(--font-size-sm);
       display: flex;
       flex-direction: column;
@@ -416,13 +404,13 @@
 @keyframes globePulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4),
-                0 0 50px rgba(59, 130, 246, 0.2);
+              box-shadow: 0 0 25px var(--color-primary-heavy-alpha-4),
+                      0 0 50px var(--color-primary-heavy-alpha-2);
   }
   50% {
     transform: scale(1.03);
-    box-shadow: 0 0 35px rgba(59, 130, 246, 0.6),
-                0 0 70px rgba(59, 130, 246, 0.3);
+          box-shadow: 0 0 35px var(--color-primary-heavy-alpha-5),
+                  0 0 70px var(--color-primary-heavy-alpha-3);
   }
 }
 
