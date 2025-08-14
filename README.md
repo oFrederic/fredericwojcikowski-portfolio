@@ -24,6 +24,8 @@
 - **Optimized Bundle**: 73kB gzipped with strategic code splitting
 - **Responsive Design**: Mobile-first with CSS Container Queries
 - **Accessibility**: Full WCAG compliance and keyboard navigation
+- **Theme Switching**: Light, dark, and system theme modes with persistent preferences
+- **Internationalization**: Multi-language support (English, Japanese, French) with automatic detection
 
 ---
 
@@ -34,6 +36,11 @@
 - **TypeScript** - Strict mode for type safety
 - **Vite** - Lightning-fast build tool and dev server
 - **Modern CSS** - Container Queries, Nesting, CSS Modules
+
+**User Experience**
+- **Theme System** - Light, dark, and system theme modes with Context API
+- **Internationalization** - react-i18next with automatic language detection
+- **Language Support** - English, Japanese, and French translations
 
 **Performance & Quality**
 - **Lighthouse CI** - Automated performance testing
@@ -198,13 +205,49 @@ src/
 │   ├── Hero/           # Landing section
 │   ├── Projects/       # Portfolio showcase
 │   ├── About/          # About section
-│   └── Contact/        # Contact form
+│   ├── Contact/        # Contact form
+│   └── Navigation/     # Navigation with theme/language toggles
+├── contexts/           # React Context providers
+│   └── ThemeContext.tsx # Theme management
+├── hooks/              # Custom React hooks
+│   ├── useTheme.ts     # Theme utilities
+│   └── useLanguage.ts  # Language management
+├── locales/            # Translation files
+│   ├── en/             # English translations
+│   ├── ja/             # Japanese translations
+│   └── fr/             # French translations
 ├── styles/             # Global styles
 │   ├── variables.css   # Design tokens
+│   ├── themes/         # Theme-specific styles
 │   └── globals.css     # Base styles
 ├── utils/              # Utility functions
 └── types/              # TypeScript definitions
 ```
+
+---
+
+## 🌟 Features
+
+### Theme System
+- **Multiple Themes**: Light, dark, and system theme modes
+- **Persistent Preferences**: Theme choice saved in localStorage
+- **System Integration**: Automatically follows OS theme preference
+- **Smooth Transitions**: CSS transitions for theme switching
+- **Accessibility**: High contrast ratios maintained across themes
+
+### Internationalization (i18n)
+- **Multi-Language Support**: English, Japanese, and French
+- **Automatic Detection**: Detects browser language preference
+- **Language Persistence**: Selected language saved in localStorage
+- **SEO Optimized**: Dynamic `lang` attribute updates
+- **Flag Icons**: Visual language selection with country flags
+- **Comprehensive Coverage**: All UI text translated across components
+
+### Language Features
+- **Translation Keys**: Organized by component and section
+- **Fallback System**: Graceful fallback to English for missing translations
+- **Context-Aware**: Proper pluralization and interpolation support
+- **Developer Friendly**: Type-safe translation keys with TypeScript
 
 ---
 
