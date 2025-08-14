@@ -1,0 +1,191 @@
+{
+  "navigation": {
+    "brand": {
+      "firstName": "Frederic",
+      "lastName": "Wojcikowski"
+    },
+    "links": {
+      "projects": "プロジェクト",
+      "about": "私について",
+      "contact": "お問い合わせ"
+    },
+    "language": {
+      "title": "言語を変更",
+      "english": "English",
+      "japanese": "日本語",
+      "french": "Français"
+    }
+  },
+  "hero": {
+    "title": "Frederic Wojcikowski",
+    "subtitle": "React、Vue.js、レガシーシステムの近代化を専門とするフロントエンドエンジニア。4年以上の経験で、日本の国内外市場において複雑なアイデアをスケーラブルなWebアプリケーションに変換しています。",
+    "actions": {
+      "exploreProjects": "プロジェクトを見る",
+      "contactMe": "お問い合わせ"
+    },
+    "scrollIndicator": "スクロールして探索"
+  },
+  "projects": {
+    "title": "プロジェクト",
+    "subtitle": "モダンなWeb開発手法、パフォーマンス最適化、ユーザー中心設計を実証する最近の作品のショーケース。",
+    "status": {
+      "completed": "完了",
+      "inProgress": "進行中"
+    },
+    "actions": {
+      "liveDemo": "デモを見る",
+      "viewCode": "コードを見る"
+    },
+    "featured": "注目",
+    "items": {
+      "portfolio": {
+        "title": "モダンポートフォリオサイト",
+        "description": "React 19、TypeScript、コンテナクエリ、CSSネスティング、CSSモジュールなどの最新CSS機能を使用して構築された高性能ポートフォリオ。"
+      },
+      "ecommerce": {
+        "title": "Eコマースプラットフォーム（プレースホルダー）",
+        "description": "モダンな決済統合、リアルタイム在庫管理、高度な分析ダッシュボードを備えたフルスタックEコマースソリューション。"
+      },
+      "taskManagement": {
+        "title": "タスク管理アプリ（プレースホルダー）",
+        "description": "リアルタイム更新、チームコラボレーション機能、高度なプロジェクト追跡を備えた協調的タスク管理アプリケーション。"
+      },
+      "aiContent": {
+        "title": "AIコンテンツジェネレーター（プレースホルダー）",
+        "description": "自然言語処理、複数の出力形式、カスタムモデルトレーニングを備えたAI駆動コンテンツ生成プラットフォーム。"
+      },
+      "analytics": {
+        "title": "分析ダッシュボード（プレースホルダー）",
+        "description": "インタラクティブチャート、データ可視化、自動レポート機能を備えたリアルタイム分析ダッシュボード。"
+      },
+      "fitness": {
+        "title": "モバイルフィットネスアプリ（プレースホルダー）",
+        "description": "フィットネストラッキング、ワークアウト計画、ゲーミフィケーション要素を備えたソーシャル機能付きクロスプラットフォームモバイルアプリケーション。"
+      }
+    }
+  },
+  "about": {
+    "title": "私について",
+    "bio": {
+      "main": "React、Vue.js、Ember.js、TypeScript、状態管理ソリューションを含む4年以上の経験を持つ熟練フロントエンドエンジニア。私の旅は日本での独学から始まり、Code Chrysalisブートキャンプを経て、スタートアップMVPのゼロからの構築から、現在のTableCheckでのデュアルプラットフォーム開発の管理とジュニアエンジニアのメンタリングまで進歩しました。厳しい期限の中で複雑なプロジェクトや機能を提供する能力を証明し、日本のビジネス環境での異文化コラボレーションに優れています。",
+      "hobby": "コーディングしていない時は、新しい技術の探索、オープンソースプロジェクトへの貢献、ブログやトークを通じた開発者コミュニティとの知識共有を行っています。"
+    },
+    "techStack": {
+      "title": "技術スタック",
+      "categories": {
+        "frontend": {
+          "title": "フロントエンド",
+          "technologies": ["React", "TypeScript", "Vue.js", "Ember.js", "Redux", "Xstate", "Next.js", "Nuxt", "JavaScript ES6+", "HTML5", "CSS3"]
+        },
+        "testing": {
+          "title": "テスト・ツール",
+          "technologies": ["Jest", "Enzyme", "Storybook", "Vite", "Vitest", "Git", "Figma"]
+        },
+        "stateManagement": {
+          "title": "状態管理",
+          "technologies": ["Redux", "Xstate", "Vuex", "Context API", "ローカル状態管理"]
+        },
+        "legacy": {
+          "title": "レガシー・近代化",
+          "technologies": ["レガシーコード移行", "CoffeeScriptからTypeScript", "Ember.js v2からv6", "デザインシステム刷新", "フィーチャーフラグ"]
+        }
+      }
+    },
+    "experience": {
+      "title": "経験",
+      "items": {
+        "tablecheck": {
+          "title": "フロントエンドエンジニア",
+          "company": "TableCheck - 東京、日本",
+          "period": "2021年12月 - 現在",
+          "description": "レストラン管理エコシステムのデュアルプラットフォーム開発をリード。レガシーコードベースの近代化（Ember.js v2からv6、CoffeeScriptからTypeScript）、デザインシステム刷新の実装、ジュニアエンジニアのメンタリングを管理。React、Redux、Xstate、Ember.jsを専門とする。"
+        },
+        "neopa": {
+          "title": "フロントエンドエンジニア",
+          "company": "Neopa - 渋谷、日本",
+          "period": "2021年7月 - 2021年12月",
+          "description": "Vue.js、TypeScript、Nuxtを使用して多様なクライアント向けカスタムWebアプリケーションを開発。主要企業クライアント向けリアルタイム交通マッピングプラットフォームを4ヶ月の期限で成功裏に提供。完全な日本語作業環境に適応。"
+        },
+        "airamp": {
+          "title": "フロントエンドエンジニア（フリーランス）",
+          "company": "Airamp - 福岡、日本",
+          "period": "2021年4月 - 2021年7月",
+          "description": "React、Redux、TypeScript、Next.jsを使用して収益共有ストリーミングプラットフォームMVPをゼロから構築。協調的コンテンツ作成プラットフォームの完全なコードベースアーキテクチャとコンポーネントライブラリを確立。"
+        }
+      }
+    },
+    "stats": {
+      "title": "数字で見る",
+      "items": {
+        "experience": { "number": "4+", "label": "年の経験" },
+        "languages": { "number": "3", "label": "話せる言語" },
+        "technologies": { "number": "8+", "label": "技術" },
+        "platforms": { "number": "2", "label": "管理プラットフォーム" }
+      }
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "次のプロジェクトでコラボレーションする準備はできていますか？私は卓越したWeb体験の作成に情熱を持っており、あなたのアイデアを実現する方法について話し合いたいと思います。素晴らしいものを一緒に作りましょう。",
+    "form": {
+      "title": "メッセージを送る",
+      "fields": {
+        "name": {
+          "label": "お名前",
+          "placeholder": "フルネーム",
+          "required": "お名前は必須です",
+          "minLength": "お名前は2文字以上である必要があります"
+        },
+        "email": {
+          "label": "メールアドレス",
+          "placeholder": "your.email@example.com",
+          "required": "メールアドレスは必須です",
+          "invalid": "有効なメールアドレスを入力してください"
+        },
+        "subject": {
+          "label": "件名",
+          "placeholder": "何についてですか？",
+          "required": "件名は必須です",
+          "minLength": "件名は5文字以上である必要があります"
+        },
+        "message": {
+          "label": "メッセージ",
+          "placeholder": "プロジェクト、タイムライン、特定の要件について教えてください...",
+          "required": "メッセージは必須です",
+          "minLength": "メッセージは10文字以上である必要があります",
+          "help": "最低10文字必要です"
+        }
+      },
+      "submit": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "ありがとうございます！メッセージが正常に送信されました。すぐに返信いたします！",
+      "error": "申し訳ございません。何か問題が発生しました。もう一度お試しいただくか、メールで直接お問い合わせください。",
+      "rateLimit": "別のメッセージを送信する前に1分お待ちください。"
+    },
+    "methods": {
+      "email": {
+        "title": "メール",
+        "description": "連絡する最良の方法"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "プロフェッショナルネットワーキング"
+      },
+      "location": {
+        "title": "所在地",
+        "description": "世界中でリモートワーク可能"
+      },
+      "responseTime": {
+        "title": "返信時間",
+        "description": "迅速で信頼性の高いコミュニケーション"
+      }
+    },
+    "social": {
+      "title": "フォローする"
+    }
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "required": "*"
+  }
+}

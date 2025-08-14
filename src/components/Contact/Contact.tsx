@@ -1,4 +1,5 @@
 import React, { useState, useRef, type FormEvent } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { 
   ContactProps, 
   ContactMethod, 
@@ -111,11 +112,19 @@ const defaultSocialLinks: SocialLink[] = [
 ];
 
 const Contact: React.FC<ContactProps> = ({
-  title = "Let's Connect",
-  subtitle = "Ready to collaborate on your next project? I'm passionate about creating exceptional web experiences and would love to discuss how we can bring your ideas to life. Let's build something amazing together.",
+  title,
+  subtitle,
   contactMethods = defaultContactMethods,
   socialLinks = defaultSocialLinks
 }) => {
+  const { t } = useTranslation();
+
+  // Use translations for default values
+  const defaultTitle = t('contact.title');
+  const defaultSubtitle = t('contact.subtitle');
+  
+  const finalTitle = title || defaultTitle;
+  const finalSubtitle = subtitle || defaultSubtitle;
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -137,11 +146,11 @@ const Contact: React.FC<ContactProps> = ({
     const rules = validation[name];
     
     if (rules.required && !value.trim()) {
-      return `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
+      return t(`contact.form.fields.${name}.required`);
     }
     
     if (rules.minLength && value.trim().length < rules.minLength) {
-      return `${name.charAt(0).toUpperCase() + name.slice(1)} must be at least ${rules.minLength} characters`;
+      return t(`contact.form.fields.${name}.minLength`);
     }
     
     if (rules.maxLength && value.trim().length > rules.maxLength) {
@@ -150,7 +159,7 @@ const Contact: React.FC<ContactProps> = ({
     
     if (rules.pattern && !rules.pattern.test(value)) {
       if (name === 'email') {
-        return 'Please enter a valid email address';
+        return t('contact.form.fields.email.invalid');
       }
       return `${name.charAt(0).toUpperCase() + name.slice(1)} format is invalid`;
     }
@@ -213,7 +222,7 @@ const Contact: React.FC<ContactProps> = ({
     const now = Date.now();
     if (now - lastSubmission < 60000) {
       setSubmitStatus('error');
-      setStatusMessage('Please wait a minute before submitting another message.');
+      setStatusMessage(t('contact.form.rateLimit'));
       return;
     }
     
@@ -238,7 +247,7 @@ const Contact: React.FC<ContactProps> = ({
       
       if (response.ok) {
         setSubmitStatus('success');
-        setStatusMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
+        setStatusMessage(t('contact.form.success'));
         setFormData({ name: '', email: '', subject: '', message: '' });
         formRef.current?.reset();
         setLastSubmission(now); // Update last submission time
@@ -247,7 +256,7 @@ const Contact: React.FC<ContactProps> = ({
       }
     } catch (submitError) {
       setSubmitStatus('error');
-      setStatusMessage('Oops! Something went wrong. Please try again or contact me directly via email.');
+      setStatusMessage(t('contact.form.error'));
       console.error('Form submission error:', submitError);
     } finally {
       setIsSubmitting(false);
@@ -262,10 +271,10 @@ const Contact: React.FC<ContactProps> = ({
           <div className={styles.contactInfo}>
             <header className={styles.sectionHeader}>
               <h2 id="contact-title" className={styles.sectionTitle}>
-                {title}
+                {finalTitle}
               </h2>
               <p className={styles.sectionSubtitle}>
-                {subtitle}
+                {finalSubtitle}
               </p>
             </header>
             
@@ -293,7 +302,7 @@ const Contact: React.FC<ContactProps> = ({
             
             {/* Social Links */}
             <div className={styles.socialLinks}>
-              <h3 className={styles.socialTitle}>Connect with me</h3>
+              <h3 className={styles.socialTitle}>{t('contact.social.title')}</h3>
               <div className={styles.socialList}>
                 {socialLinks.map((social, index) => (
                   <a
@@ -329,20 +338,20 @@ const Contact: React.FC<ContactProps> = ({
             <div style={{ display: 'none' }}>
               <input name="bot-field" tabIndex={-1} autoComplete="off" />
             </div>
-            <h3 className={styles.formTitle}>Send me a message</h3>
+            <h3 className={styles.formTitle}>{t('contact.form.title')}</h3>
             
             <div className={styles.formGrid}>
               {/* Name Field */}
               <div className={styles.formGroup}>
                 <label htmlFor="contact-name" className={styles.formLabel}>
-                  Name <span className={styles.required}>*</span>
+                  {t('contact.form.fields.name.label')} <span className={styles.required}>{t('common.required')}</span>
                 </label>
                 <input
                   type="text"
                   id="contact-name"
                   name="name"
                   className={styles.formInput}
-                  placeholder="Your full name"
+                  placeholder={t('contact.form.fields.name.placeholder')}
                   value={formData.name}
                   onChange={handleInputChange}
                   required
@@ -362,14 +371,14 @@ const Contact: React.FC<ContactProps> = ({
               {/* Email Field */}
               <div className={styles.formGroup}>
                 <label htmlFor="contact-email" className={styles.formLabel}>
-                  Email <span className={styles.required}>*</span>
+                  {t('contact.form.fields.email.label')} <span className={styles.required}>{t('common.required')}</span>
                 </label>
                 <input
                   type="email"
                   id="contact-email"
                   name="email"
                   className={styles.formInput}
-                  placeholder="your.email@example.com"
+                  placeholder={t('contact.form.fields.email.placeholder')}
                   value={formData.email}
                   onChange={handleInputChange}
                   required
@@ -389,14 +398,14 @@ const Contact: React.FC<ContactProps> = ({
               {/* Subject Field */}
               <div className={`${styles.formGroup} ${styles.fullWidth}`}>
                 <label htmlFor="contact-subject" className={styles.formLabel}>
-                  Subject <span className={styles.required}>*</span>
+                  {t('contact.form.fields.subject.label')} <span className={styles.required}>{t('common.required')}</span>
                 </label>
                 <input
                   type="text"
                   id="contact-subject"
                   name="subject"
                   className={styles.formInput}
-                  placeholder="What's this about?"
+                  placeholder={t('contact.form.fields.subject.placeholder')}
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
@@ -416,13 +425,13 @@ const Contact: React.FC<ContactProps> = ({
               {/* Message Field */}
               <div className={`${styles.formGroup} ${styles.fullWidth}`}>
                 <label htmlFor="contact-message" className={styles.formLabel}>
-                  Message <span className={styles.required}>*</span>
+                  {t('contact.form.fields.message.label')} <span className={styles.required}>{t('common.required')}</span>
                 </label>
                 <textarea
                   id="contact-message"
                   name="message"
                   className={styles.formTextarea}
-                  placeholder="Tell me about your project, timeline, and any specific requirements..."
+                  placeholder={t('contact.form.fields.message.placeholder')}
                   value={formData.message}
                   onChange={handleInputChange}
                   required
@@ -438,7 +447,7 @@ const Contact: React.FC<ContactProps> = ({
                   </div>
                 )}
                 <div id="message-help" className={styles.formHelp}>
-                  Minimum 10 characters required
+                  {t('contact.form.fields.message.help')}
                 </div>
               </div>
             </div>
@@ -450,7 +459,7 @@ const Contact: React.FC<ContactProps> = ({
                 className={`${styles.submitButton} ${isSubmitting ? styles.loading : ''}`}
                 disabled={isSubmitting}
               >
-                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                <span>{isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}</span>
                 <svg 
                   className={styles.submitIcon} 
                   viewBox="0 0 24 24" 

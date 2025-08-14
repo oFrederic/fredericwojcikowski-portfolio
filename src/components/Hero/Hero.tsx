@@ -1,8 +1,11 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { smoothScrollTo } from '../../utils/performance'
 import styles from './Hero.module.css'
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   const handleScroll = (href: string): void => {
     if (href.startsWith('#')) {
       smoothScrollTo(href)
@@ -26,11 +29,11 @@ const Hero: React.FC = () => {
         {/* Hero Content */}
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            Frederic Wojcikowski
+            {t('hero.title')}
           </h1>
           
           <p className={styles.heroSubtitle}>
-            Frontend Engineer specializing in React, Vue.js and legacy modernization. 4+ years transforming complex ideas into scalable web applications across Japanese and international markets.
+            {t('hero.subtitle')}
           </p>
           
           <div className={styles.heroActions}>
@@ -39,7 +42,7 @@ const Hero: React.FC = () => {
               onClick={() => handleScroll('#projects')}
               type="button"
             >
-              Explore Projects
+              {t('hero.actions.exploreProjects')}
               <span aria-hidden="true">→</span>
             </button>
             
@@ -48,7 +51,7 @@ const Hero: React.FC = () => {
               onClick={() => handleScroll('#contact')}
               type="button"
             >
-              Contact Me
+              {t('hero.actions.contactMe')}
             </button>
           </div>
         </div>
@@ -142,7 +145,7 @@ const Hero: React.FC = () => {
       
       {/* Scroll indicator */}
       <div className={styles.scrollIndicator} role="button" tabIndex={0}>
-        <span>Scroll to explore</span>
+        <span>{t('hero.scrollIndicator')}</span>
       </div>
     </section>
   );

@@ -16,6 +16,28 @@ export interface ThemeContextType {
 }
 
 // =============================================================================
+// Language Types
+// =============================================================================
+
+export type SupportedLanguage = 'en' | 'ja' | 'fr';
+
+export interface LanguageConfig {
+  name: string;
+  flag: string;
+}
+
+export interface LanguageContextType {
+  currentLanguage: SupportedLanguage;
+  setLanguage: (language: SupportedLanguage) => void;
+  t: (key: string, options?: Record<string, unknown>) => string;
+  i18n: {
+    language: string;
+    changeLanguage: (language: string) => Promise<void>;
+    on: (event: string, callback: (language: string) => void) => void;
+  };
+}
+
+// =============================================================================
 // Common Base Types
 // =============================================================================
 

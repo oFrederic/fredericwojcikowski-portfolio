@@ -94,6 +94,15 @@ export const smoothScrollTo = (elementId: string): void => {
   })
 }
 
+/**
+ * Update document language attribute for accessibility and SEO
+ */
+export const updateDocumentLanguage = (language: string): void => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.lang = language;
+  }
+}
+
 // =============================================================================
 // Image Utilities
 // =============================================================================

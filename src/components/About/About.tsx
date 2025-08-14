@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import type { AboutProps, TechCategory, ExperienceItem, AboutStats } from '../../types'
 import { OptimizedImage } from '../OptimizedImage'
 import styles from './About.module.css'
@@ -72,17 +73,29 @@ const defaultStats: AboutStats[] = [
 ];
 
 const About: React.FC<AboutProps> = ({
-  name = "Frederic Wojcikowski",
-  title = "Frontend Engineer",
+  name,
+  title,
   profileImage = "/images/profile/frederic-wojcikowski-profile.jpg",
   email = "wojcikowskif@gmail.com",
-  location = "Ichikawa, Chiba, Japan",
+  location,
   website = "fredericwojcikowski-portfolio.netlify.app",
-  bio = "Skilled frontend engineer with 4+ years of experience including React, Vue.js, and Ember.js, along with TypeScript and state management solutions. My journey began with self-study in Japan, followed by Code Chrysalis bootcamp, then progressed from building startup MVPs from scratch to my current role at TableCheck where I manage dual-platform development while mentoring junior engineers. I've proven capable of delivering complex projects and features under tight deadlines, and excel in cross-cultural collaboration within Japanese business environments.",
+  bio,
   techStack = defaultTechStack,
   experience = defaultExperience,
   stats = defaultStats
 }) => {
+  const { t } = useTranslation();
+
+  // Use translations for default values
+  const defaultName = `${t('navigation.brand.firstName')} ${t('navigation.brand.lastName')}`;
+  const defaultTitle = "Frontend Engineer"; // Keep this as is since it's a job title
+  const defaultLocation = "Ichikawa, Chiba, Japan"; // Keep location as is
+  const defaultBio = t('about.bio.main');
+  
+  const finalName = name || defaultName;
+  const finalTitle = title || defaultTitle;
+  const finalLocation = location || defaultLocation;
+  const finalBio = bio || defaultBio;
   return (
     <section id="about" className={styles.aboutSection} aria-labelledby="about-title">
       <div className="container">
@@ -101,8 +114,8 @@ const About: React.FC<AboutProps> = ({
               />
             </div>
             
-            <h2 className={styles.profileName}>{name}</h2>
-            <p className={styles.profileTitle}>{title}</p>
+            <h2 className={styles.profileName}>{finalName}</h2>
+            <p className={styles.profileTitle}>{finalTitle}</p>
             
             {/* Contact Information */}
             <div className={styles.profileContact}>
@@ -117,7 +130,7 @@ const About: React.FC<AboutProps> = ({
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
-                <span>{location}</span>
+                <span>{finalLocation}</span>
               </div>
               
               <div className={styles.contactItem}>
@@ -135,13 +148,11 @@ const About: React.FC<AboutProps> = ({
           <div className={styles.aboutContent}>
             {/* Bio Section */}
             <div className={styles.contentSection}>
-              <h3 id="about-title" className={styles.sectionTitle}>About Me</h3>
+              <h3 id="about-title" className={styles.sectionTitle}>{t('about.title')}</h3>
               <div className={styles.sectionContent}>
-                <p>{bio}</p>
+                <p>{finalBio}</p>
                 <p>
-                  When I'm not coding, you can find me exploring new technologies, 
-                  contributing to open source projects, or sharing knowledge with the 
-                  developer community through blogs and talks.
+                  {t('about.bio.hobby')}
                 </p>
               </div>
             </div>

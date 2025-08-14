@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import { useLanguage } from '../../hooks/useLanguage';
 import { THEME_MODES, THEME_LABELS, THEME_ICONS } from '../../utils/theme';
 import styles from './Navigation.module.css';
 
@@ -11,10 +12,10 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<'english' | 'japanese' | 'french'>('english');
   
-  // Use the global theme system
+  // Use the global theme and language systems
   const { theme, setTheme } = useTheme();
+  const { currentLanguage, setLanguage, t, supportedLanguages } = useLanguage();
   
   const themeDropdownRef = useRef<HTMLDivElement>(null);
   const languageDropdownRef = useRef<HTMLDivElement>(null);
@@ -28,8 +29,8 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
     setIsThemeMenuOpen(false);
   };
 
-  const handleLanguageChange = (language: 'english' | 'japanese' | 'french') => {
-    setCurrentLanguage(language);
+  const handleLanguageChange = (language: 'en' | 'ja' | 'fr') => {
+    setLanguage(language);
     setIsLanguageMenuOpen(false);
   };
 
@@ -81,16 +82,16 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
         {/* Logo/Brand */}
         <div className={styles.brand}>
           <a href="#hero" onClick={() => scrollToSection('hero')}>
-            <span className={styles.brandText}>Frederic</span>
-            <span className={styles.brandAccent}>Wojcikowski</span>
+            <span className={styles.brandText}>{t('navigation.brand.firstName')}</span>
+            <span className={styles.brandAccent}>{t('navigation.brand.lastName')}</span>
           </a>
         </div>
 
         {/* Desktop Navigation Links */}
         <div className={styles.navLinks}>
-          <a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a>
-          <a href="#about" onClick={() => scrollToSection('about')}>About</a>
-          <a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a>
+          <a href="#projects" onClick={() => scrollToSection('projects')}>{t('navigation.links.projects')}</a>
+          <a href="#about" onClick={() => scrollToSection('about')}>{t('navigation.links.about')}</a>
+          <a href="#contact" onClick={() => scrollToSection('contact')}>{t('navigation.links.contact')}</a>
         </div>
 
         {/* Action Buttons */}
@@ -131,7 +132,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
             <button
               className={styles.actionButton}
               onClick={toggleLanguageMenu}
-              aria-label="Change language"
+              aria-label={t('navigation.language.title')}
               aria-expanded={isLanguageMenuOpen}
             >
               <svg className={styles.icon} viewBox="0 0 24 24" fill="currentColor">
@@ -139,28 +140,19 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
               </svg>
             </button>
             
-                         {isLanguageMenuOpen && (
-               <div className={styles.dropdown}>
-                 <button 
-                   className={`${styles.dropdownItem} ${currentLanguage === 'english' ? styles.selected : ''}`}
-                   onClick={() => handleLanguageChange('english')}
-                 >
-                   🇺🇸 English
-                 </button>
-                 <button 
-                   className={`${styles.dropdownItem} ${currentLanguage === 'japanese' ? styles.selected : ''}`}
-                   onClick={() => handleLanguageChange('japanese')}
-                 >
-                   🇯🇵 日本語
-                 </button>
-                 <button 
-                   className={`${styles.dropdownItem} ${currentLanguage === 'french' ? styles.selected : ''}`}
-                   onClick={() => handleLanguageChange('french')}
-                 >
-                   🇫🇷 Français
-                 </button>
-               </div>
-             )}
+            {isLanguageMenuOpen && (
+              <div className={styles.dropdown}>
+                {Object.entries(supportedLanguages).map(([code, config]) => (
+                  <button 
+                    key={code}
+                    className={`${styles.dropdownItem} ${currentLanguage === code ? styles.selected : ''}`}
+                    onClick={() => handleLanguageChange(code as 'en' | 'ja' | 'fr')}
+                  >
+                    {config.flag} {config.name}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -178,9 +170,9 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
-          <a href="#about" onClick={() => scrollToSection('about')}>About</a>
-          <a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a>
-          <a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a>
+          <a href="#about" onClick={() => scrollToSection('about')}>{t('navigation.links.about')}</a>
+          <a href="#projects" onClick={() => scrollToSection('projects')}>{t('navigation.links.projects')}</a>
+          <a href="#contact" onClick={() => scrollToSection('contact')}>{t('navigation.links.contact')}</a>
         </div>
       )}
     </nav>

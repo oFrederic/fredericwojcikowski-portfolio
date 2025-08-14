@@ -1,0 +1,191 @@
+{
+  "navigation": {
+    "brand": {
+      "firstName": "Frederic",
+      "lastName": "Wojcikowski"
+    },
+    "links": {
+      "projects": "Projects",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "language": {
+      "title": "Change language",
+      "english": "English",
+      "japanese": "日本語",
+      "french": "Français"
+    }
+  },
+  "hero": {
+    "title": "Frederic Wojcikowski",
+    "subtitle": "Frontend Engineer specializing in React, Vue.js and legacy modernization. 4+ years transforming complex ideas into scalable web applications across Japanese and international markets.",
+    "actions": {
+      "exploreProjects": "Explore Projects",
+      "contactMe": "Contact Me"
+    },
+    "scrollIndicator": "Scroll to explore"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A showcase of recent work demonstrating modern web development practices, performance optimization, and user-centered design.",
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress"
+    },
+    "actions": {
+      "liveDemo": "Live Demo",
+      "viewCode": "View Code"
+    },
+    "featured": "Featured",
+    "items": {
+      "portfolio": {
+        "title": "Modern Portfolio Website",
+        "description": "A high-performance portfolio built with React 19, TypeScript, and cutting-edge CSS features including container queries, CSS nesting, and CSS Modules for optimal user experience."
+      },
+      "ecommerce": {
+        "title": "E-Commerce Platform (Placeholder)",
+        "description": "Full-stack e-commerce solution with modern payment integration, real-time inventory management, and advanced analytics dashboard."
+      },
+      "taskManagement": {
+        "title": "Task Management App (Placeholder)",
+        "description": "Collaborative task management application with real-time updates, team collaboration features, and advanced project tracking."
+      },
+      "aiContent": {
+        "title": "AI Content Generator (Placeholder)",
+        "description": "AI-powered content generation platform with natural language processing, multiple output formats, and custom model training."
+      },
+      "analytics": {
+        "title": "Analytics Dashboard (Placeholder)",
+        "description": "Real-time analytics dashboard with interactive charts, data visualization, and automated reporting for business intelligence."
+      },
+      "fitness": {
+        "title": "Mobile Fitness App (Placeholder)",
+        "description": "Cross-platform mobile application for fitness tracking, workout planning, and social features with gamification elements."
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "bio": {
+      "main": "Skilled frontend engineer with 4+ years of experience including React, Vue.js, and Ember.js, along with TypeScript and state management solutions. My journey began with self-study in Japan, followed by Code Chrysalis bootcamp, then progressed from building startup MVPs from scratch to my current role at TableCheck where I manage dual-platform development while mentoring junior engineers. I've proven capable of delivering complex projects and features under tight deadlines, and excel in cross-cultural collaboration within Japanese business environments.",
+      "hobby": "When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community through blogs and talks."
+    },
+    "techStack": {
+      "title": "Tech Stack",
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "technologies": ["React", "TypeScript", "Vue.js", "Ember.js", "Redux", "Xstate", "Next.js", "Nuxt", "JavaScript ES6+", "HTML5", "CSS3"]
+        },
+        "testing": {
+          "title": "Testing & Tools",
+          "technologies": ["Jest", "Enzyme", "Storybook", "Vite", "Vitest", "Git", "Figma"]
+        },
+        "stateManagement": {
+          "title": "State Management",
+          "technologies": ["Redux", "Xstate", "Vuex", "Context API", "Local State Management"]
+        },
+        "legacy": {
+          "title": "Legacy & Modernization",
+          "technologies": ["Legacy Code Migration", "CoffeeScript to TypeScript", "Ember.js v2 to v6", "Design System Overhaul", "Feature Flags"]
+        }
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "items": {
+        "tablecheck": {
+          "title": "Frontend Engineer",
+          "company": "TableCheck - Tokyo, Japan",
+          "period": "December 2021 - Present",
+          "description": "Leading dual-platform development for restaurant management ecosystem. Managing legacy codebase modernization (Ember.js v2 to v6, CoffeeScript to TypeScript), implementing design system overhaul, and mentoring junior engineers. Specializing in React, Redux, Xstate, and Ember.js."
+        },
+        "neopa": {
+          "title": "Frontend Engineer",
+          "company": "Neopa - Shibuya, Japan",
+          "period": "July 2021 - December 2021",
+          "description": "Developed custom web applications for diverse clients using Vue.js, TypeScript, and Nuxt. Successfully delivered real-time transportation mapping platform for major enterprise client within 4-month deadline. Adapted to fully Japanese work environment."
+        },
+        "airamp": {
+          "title": "Frontend Engineer (Freelance)",
+          "company": "Airamp - Fukuoka, Japan",
+          "period": "April 2021 - July 2021",
+          "description": "Built revenue-sharing streaming platform MVP from scratch using React, Redux, TypeScript, and Next.js. Established complete codebase architecture and component library for collaborative content creation platform."
+        }
+      }
+    },
+    "stats": {
+      "title": "By the Numbers",
+      "items": {
+        "experience": { "number": "4+", "label": "Years Experience" },
+        "languages": { "number": "3", "label": "Languages Spoken" },
+        "technologies": { "number": "8+", "label": "Technologies" },
+        "platforms": { "number": "2", "label": "Platforms Managed" }
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to collaborate on your next project? I'm passionate about creating exceptional web experiences and would love to discuss how we can bring your ideas to life. Let's build something amazing together.",
+    "form": {
+      "title": "Send me a message",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your full name",
+          "required": "Name is required",
+          "minLength": "Name must be at least 2 characters"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your.email@example.com",
+          "required": "Email is required",
+          "invalid": "Please enter a valid email address"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "What's this about?",
+          "required": "Subject is required",
+          "minLength": "Subject must be at least 5 characters"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell me about your project, timeline, and any specific requirements...",
+          "required": "Message is required",
+          "minLength": "Message must be at least 10 characters",
+          "help": "Minimum 10 characters required"
+        }
+      },
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent successfully. I'll get back to you soon!",
+      "error": "Oops! Something went wrong. Please try again or contact me directly via email.",
+      "rateLimit": "Please wait a minute before submitting another message."
+    },
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Best way to reach me"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Professional networking"
+      },
+      "location": {
+        "title": "Location",
+        "description": "Available for remote work globally"
+      },
+      "responseTime": {
+        "title": "Response Time",
+        "description": "Quick and reliable communication"
+      }
+    },
+    "social": {
+      "title": "Connect with me"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "required": "*"
+  }
+}
