@@ -114,8 +114,7 @@ const Contact: React.FC<ContactProps> = ({
   title = "Let's Connect",
   subtitle = "Ready to collaborate on your next project? I'm passionate about creating exceptional web experiences and would love to discuss how we can bring your ideas to life. Let's build something amazing together.",
   contactMethods = defaultContactMethods,
-  socialLinks = defaultSocialLinks,
-  onSubmit
+  socialLinks = defaultSocialLinks
 }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -130,6 +129,9 @@ const Contact: React.FC<ContactProps> = ({
   const [statusMessage, setStatusMessage] = useState('')
   
   const formRef = useRef<HTMLFormElement>(null);
+  
+  // Rate limiting state
+  const [lastSubmission, setLastSubmission] = useState<number>(0);
 
   const validateField = (name: keyof ContactFormData, value: string): string | null => {
     const rules = validation[name];
@@ -207,32 +209,46 @@ const Contact: React.FC<ContactProps> = ({
       return;
     }
     
+    // Rate limiting check (1 minute between submissions)
+    const now = Date.now();
+    if (now - lastSubmission < 60000) {
+      setSubmitStatus('error');
+      setStatusMessage('Please wait a minute before submitting another message.');
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus(null);
     
     try {
-      let success = true;
+      // Prepare form data for Netlify
+      const formDataToSend = new URLSearchParams();
+      formDataToSend.append('form-name', 'contact');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
       
-      if (onSubmit) {
-        success = await onSubmit(formData);
-      } else {
-        // Simulate API call for demo
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.warn('Form submitted:', formData)
-      }
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formDataToSend.toString(),
+      });
       
-      if (success) {
-        setSubmitStatus('warning');
-        setStatusMessage('This feature is not yet implemented. Please contact me directly via email.');
+      if (response.ok) {
+        setSubmitStatus('success');
+        setStatusMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
         setFormData({ name: '', email: '', subject: '', message: '' });
         formRef.current?.reset();
+        setLastSubmission(now); // Update last submission time
       } else {
         throw new Error('Submission failed');
       }
     } catch (submitError) {
-      setSubmitStatus('error')
-      setStatusMessage('Oops! Something went wrong. Please try again or contact me directly.')
-      console.error('Form submission error:', submitError)
+      setSubmitStatus('error');
+      setStatusMessage('Oops! Something went wrong. Please try again or contact me directly via email.');
+      console.error('Form submission error:', submitError);
     } finally {
       setIsSubmitting(false);
     }
@@ -301,7 +317,18 @@ const Contact: React.FC<ContactProps> = ({
             className={styles.contactForm} 
             onSubmit={handleSubmit}
             noValidate
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
+            {/* Netlify form detection */}
+            <input type="hidden" name="form-name" value="contact" />
+            
+            {/* Honeypot field for spam protection */}
+            <div style={{ display: 'none' }}>
+              <input name="bot-field" tabIndex={-1} autoComplete="off" />
+            </div>
             <h3 className={styles.formTitle}>Send me a message</h3>
             
             <div className={styles.formGrid}>
