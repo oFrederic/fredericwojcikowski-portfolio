@@ -18,60 +18,60 @@
   },
   "hero": {
     "title": "Frederic Wojcikowski",
-    "subtitle": "Frontend Engineer specializing in React, Vue.js and legacy modernization. 4+ years transforming complex ideas into scalable web applications across Japanese and international markets.",
+    "subtitle": "Frontend Engineer specializing in React, Vue.js, and legacy system modernization. Over 4 years of experience transforming complex concepts into scalable web applications for Japanese and international markets.",
     "actions": {
-      "exploreProjects": "Explore Projects",
-      "contactMe": "Contact Me"
+      "exploreProjects": "View Projects",
+      "contactMe": "Get in Touch"
     },
     "scrollIndicator": "Scroll to explore"
   },
   "projects": {
-    "title": "My Projects",
-    "subtitle": "A showcase of recent work demonstrating modern web development practices, performance optimization, and user-centered design.",
+    "title": "Featured Work",
+    "subtitle": "A curated selection of recent projects showcasing modern web development practices, performance optimization, and user-centered design principles.",
     "status": {
       "completed": "Completed",
-      "inProgress": "In Progress"
+      "inProgress": "In Development"
     },
     "actions": {
-      "liveDemo": "Live Demo",
+      "liveDemo": "View Demo",
       "viewCode": "View Code"
     },
-    "featured": "Featured",
+    "featured": "Featured Project",
     "items": {
       "portfolio": {
         "title": "Modern Portfolio Website",
         "description": "A high-performance portfolio built with React 19, TypeScript, and cutting-edge CSS features including container queries, CSS nesting, and CSS Modules for optimal user experience."
       },
       "ecommerce": {
-        "title": "E-Commerce Platform (Placeholder)",
-        "description": "Full-stack e-commerce solution with modern payment integration, real-time inventory management, and advanced analytics dashboard."
+        "title": "E-Commerce Platform (Sample)",
+        "description": "Comprehensive e-commerce solution featuring modern payment integration, real-time inventory management, and advanced analytics dashboard."
       },
       "taskManagement": {
-        "title": "Task Management App (Placeholder)",
-        "description": "Collaborative task management application with real-time updates, team collaboration features, and advanced project tracking."
+        "title": "Task Management Application (Sample)",
+        "description": "Collaborative task management platform with real-time updates, team collaboration features, and advanced project tracking capabilities."
       },
       "aiContent": {
-        "title": "AI Content Generator (Placeholder)",
-        "description": "AI-powered content generation platform with natural language processing, multiple output formats, and custom model training."
+        "title": "AI Content Generator (Sample)",
+        "description": "AI-powered content generation platform featuring natural language processing, multiple output formats, and custom model training capabilities."
       },
       "analytics": {
-        "title": "Analytics Dashboard (Placeholder)",
+        "title": "Analytics Dashboard (Sample)",
         "description": "Real-time analytics dashboard with interactive charts, data visualization, and automated reporting for business intelligence."
       },
       "fitness": {
-        "title": "Mobile Fitness App (Placeholder)",
+        "title": "Mobile Fitness Application (Sample)",
         "description": "Cross-platform mobile application for fitness tracking, workout planning, and social features with gamification elements."
       }
     }
   },
   "about": {
-    "title": "About Me",
+    "title": "About",
     "bio": {
-      "main": "Skilled frontend engineer with 4+ years of experience including React, Vue.js, and Ember.js, along with TypeScript and state management solutions. My journey began with self-study in Japan, followed by Code Chrysalis bootcamp, then progressed from building startup MVPs from scratch to my current role at TableCheck where I manage dual-platform development while mentoring junior engineers. I've proven capable of delivering complex projects and features under tight deadlines, and excel in cross-cultural collaboration within Japanese business environments.",
-      "hobby": "When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community through blogs and talks."
+      "main": "Experienced frontend engineer with over 4 years of expertise in React, Vue.js, and Ember.js, along with TypeScript and state management solutions. My career began with self-directed learning in Japan, followed by the Code Chrysalis bootcamp, then evolved from building startup MVPs from scratch to my current role at TableCheck where I oversee dual-platform development while mentoring junior engineers. I've demonstrated the ability to deliver complex projects and features under tight deadlines, and excel in cross-cultural collaboration within Japanese business environments.",
+      "hobby": "Beyond development, I dedicate time to exploring emerging technologies, contributing to open source projects, and sharing knowledge with the developer community through blogs and presentations."
     },
     "techStack": {
-      "title": "Tech Stack",
+      "title": "Technologies",
       "categories": {
         "frontend": {
           "title": "Frontend",
@@ -92,13 +92,13 @@
       }
     },
     "experience": {
-      "title": "Experience",
+      "title": "Professional Experience",
       "items": {
         "tablecheck": {
           "title": "Frontend Engineer",
           "company": "TableCheck - Tokyo, Japan",
           "period": "December 2021 - Present",
-          "description": "Leading dual-platform development for restaurant management ecosystem. Managing legacy codebase modernization (Ember.js v2 to v6, CoffeeScript to TypeScript), implementing design system overhaul, and mentoring junior engineers. Specializing in React, Redux, Xstate, and Ember.js."
+          "description": "Overseeing dual-platform development for restaurant management ecosystem. Managing legacy codebase modernization (Ember.js v2 to v6, CoffeeScript to TypeScript), implementing design system overhaul, and mentoring junior engineers. Specializing in React, Redux, Xstate, and Ember.js."
         },
         "neopa": {
           "title": "Frontend Engineer",
@@ -110,23 +110,23 @@
           "title": "Frontend Engineer (Freelance)",
           "company": "Airamp - Fukuoka, Japan",
           "period": "April 2021 - July 2021",
-          "description": "Built revenue-sharing streaming platform MVP from scratch using React, Redux, TypeScript, and Next.js. Established complete codebase architecture and component library for collaborative content creation platform."
+          "description": "Designed and built revenue-sharing streaming platform MVP from scratch using React, Redux, TypeScript, and Next.js. Established complete codebase architecture and component library for collaborative content creation platform."
         }
       }
     },
     "stats": {
-      "title": "By the Numbers",
+      "title": "Key Metrics",
       "items": {
-        "experience": { "number": "4+", "label": "Years Experience" },
-        "languages": { "number": "3", "label": "Languages Spoken" },
-        "technologies": { "number": "8+", "label": "Technologies" },
+        "experience": { "number": "4+", "label": "Years of Experience" },
+        "languages": { "number": "3", "label": "Languages Mastered" },
+        "technologies": { "number": "8+", "label": "Technologies Mastered" },
         "platforms": { "number": "2", "label": "Platforms Managed" }
       }
     }
   },
   "contact": {
-    "title": "Let's Connect",
-    "subtitle": "Ready to collaborate on your next project? I'm passionate about creating exceptional web experiences and would love to discuss how we can bring your ideas to life. Let's build something amazing together.",
+    "title": "Contact",
+    "subtitle": "Ready to collaborate on your next project? I'm passionate about creating exceptional web experiences and would love to discuss how we can bring your vision to life. Let's create something extraordinary together.",
     "form": {
       "title": "Send me a message",
       "fields": {
@@ -144,7 +144,7 @@
         },
         "subject": {
           "label": "Subject",
-          "placeholder": "What's this about?",
+          "placeholder": "What can I help you with?",
           "required": "Subject is required",
           "minLength": "Subject must be at least 5 characters"
         },
@@ -158,22 +158,23 @@
       },
       "submit": "Send Message",
       "sending": "Sending...",
-      "success": "Thank you! Your message has been sent successfully. I'll get back to you soon!",
-      "error": "Oops! Something went wrong. Please try again or contact me directly via email.",
+      "success": "Thank you! Your message has been sent successfully. I'll get back to you as soon as possible!",
+      "error": "An error occurred. Please try again or contact me directly via email.",
       "rateLimit": "Please wait a minute before submitting another message."
     },
     "methods": {
       "email": {
         "title": "Email",
-        "description": "Best way to reach me"
+        "description": "Preferred contact method"
       },
       "linkedin": {
         "title": "LinkedIn",
-        "description": "Professional networking"
+        "description": "Professional network"
       },
       "location": {
         "title": "Location",
-        "description": "Available for remote work globally"
+        "description": "Available for remote work worldwide",
+        "value": "Ichikawa, Chiba, Japan"
       },
       "responseTime": {
         "title": "Response Time",
@@ -181,7 +182,7 @@
       }
     },
     "social": {
-      "title": "Connect with me"
+      "title": "Follow me"
     }
   },
   "common": {

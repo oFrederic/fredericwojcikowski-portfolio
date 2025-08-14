@@ -44,32 +44,32 @@ const defaultTechStack: TechCategory[] = [
   }
 ];
 
-const defaultExperience: ExperienceItem[] = [
+const createDefaultExperience = (t: (key: string) => string): ExperienceItem[] => [
   {
-    title: 'Frontend Engineer',
-    company: 'TableCheck - Tokyo, Japan',
-    period: 'December 2021 - Present',
-    description: 'Leading dual-platform development for restaurant management ecosystem. Managing legacy codebase modernization (Ember.js v2 to v6, CoffeeScript to TypeScript), implementing design system overhaul, and mentoring junior engineers. Specializing in React, Redux, Xstate, and Ember.js.'
+    title: t('about.experience.items.tablecheck.title'),
+    company: t('about.experience.items.tablecheck.company'),
+    period: t('about.experience.items.tablecheck.period'),
+    description: t('about.experience.items.tablecheck.description')
   },
   {
-    title: 'Frontend Engineer',
-    company: 'Neopa - Shibuya, Japan',
-    period: 'July 2021 - December 2021',
-    description: 'Developed custom web applications for diverse clients using Vue.js, TypeScript, and Nuxt. Successfully delivered real-time transportation mapping platform for major enterprise client within 4-month deadline. Adapted to fully Japanese work environment.'
+    title: t('about.experience.items.neopa.title'),
+    company: t('about.experience.items.neopa.company'),
+    period: t('about.experience.items.neopa.period'),
+    description: t('about.experience.items.neopa.description')
   },
   {
-    title: 'Frontend Engineer (Freelance)',
-    company: 'Airamp - Fukuoka, Japan',
-    period: 'April 2021 - July 2021',
-    description: 'Built revenue-sharing streaming platform MVP from scratch using React, Redux, TypeScript, and Next.js. Established complete codebase architecture and component library for collaborative content creation platform.'
+    title: t('about.experience.items.airamp.title'),
+    company: t('about.experience.items.airamp.company'),
+    period: t('about.experience.items.airamp.period'),
+    description: t('about.experience.items.airamp.description')
   }
 ];
 
-const defaultStats: AboutStats[] = [
-  { number: '4+', label: 'Years Experience' },
-  { number: '3', label: 'Languages Spoken' },
-  { number: '8+', label: 'Technologies' },
-  { number: '2', label: 'Platforms Managed' }
+const createDefaultStats = (t: (key: string) => string): AboutStats[] => [
+  { number: '4+', label: t('about.stats.items.experience.label') },
+  { number: '3', label: t('about.stats.items.languages.label') },
+  { number: '8+', label: t('about.stats.items.technologies.label') },
+  { number: '2', label: t('about.stats.items.platforms.label') }
 ];
 
 const About: React.FC<AboutProps> = ({
@@ -80,22 +80,31 @@ const About: React.FC<AboutProps> = ({
   location,
   website = "fredericwojcikowski-portfolio.netlify.app",
   bio,
-  techStack = defaultTechStack,
-  experience = defaultExperience,
-  stats = defaultStats
+  techStack,
+  experience,
+  stats
 }) => {
   const { t } = useTranslation();
 
   // Use translations for default values
   const defaultName = `${t('navigation.brand.firstName')} ${t('navigation.brand.lastName')}`;
   const defaultTitle = "Frontend Engineer"; // Keep this as is since it's a job title
-  const defaultLocation = "Ichikawa, Chiba, Japan"; // Keep location as is
+  const defaultLocation = t('contact.methods.location.value'); // Use translated location
   const defaultBio = t('about.bio.main');
   
   const finalName = name || defaultName;
   const finalTitle = title || defaultTitle;
   const finalLocation = location || defaultLocation;
   const finalBio = bio || defaultBio;
+  
+  // Create default data with translations
+  const defaultTechStackData = defaultTechStack;
+  const defaultExperienceData = createDefaultExperience(t);
+  const defaultStatsData = createDefaultStats(t);
+  
+  const finalTechStack = techStack || defaultTechStackData;
+  const finalExperience = experience || defaultExperienceData;
+  const finalStats = stats || defaultStatsData;
   return (
     <section id="about" className={styles.aboutSection} aria-labelledby="about-title">
       <div className="container">
@@ -159,9 +168,9 @@ const About: React.FC<AboutProps> = ({
             
             {/* Tech Stack Section */}
             <div className={`${styles.contentSection} ${styles.techStack}`}>
-              <h3 className={styles.sectionTitle}>Tech Stack</h3>
+              <h3 className={styles.sectionTitle}>{t('about.techStack.title')}</h3>
               <div className={styles.techCategories}>
-                {techStack.map((category, index) => (
+                {finalTechStack.map((category, index) => (
                   <div key={index} className={styles.techCategory}>
                     <h4 className={styles.categoryTitle}>
                       {category.icon}
@@ -181,9 +190,9 @@ const About: React.FC<AboutProps> = ({
             
             {/* Experience Section */}
             <div className={`${styles.contentSection} ${styles.experienceTimeline}`}>
-              <h3 className={styles.sectionTitle}>Experience</h3>
+              <h3 className={styles.sectionTitle}>{t('about.experience.title')}</h3>
               <div className={styles.timelineList}>
-                {experience.map((item, index) => (
+                {finalExperience.map((item, index) => (
                   <div key={index} className={styles.timelineItem}>
                     <div className={styles.itemHeader}>
                       <h4 className={styles.itemTitle}>{item.title}</h4>
@@ -198,9 +207,9 @@ const About: React.FC<AboutProps> = ({
             
             {/* Stats Section */}
             <div className={`${styles.contentSection} ${styles.aboutStats}`}>
-              <h3 className={styles.sectionTitle}>By the Numbers</h3>
+              <h3 className={styles.sectionTitle}>{t('about.stats.title')}</h3>
               <div className={styles.statsGrid}>
-                {stats.map((stat, index) => (
+                {finalStats.map((stat, index) => (
                   <div key={index} className={styles.statItem}>
                     <div className={styles.statNumber}>{stat.number}</div>
                     <div className={styles.statLabel}>{stat.label}</div>

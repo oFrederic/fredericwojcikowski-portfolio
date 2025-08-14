@@ -5,12 +5,12 @@ import { PROJECT_STATUSES } from '../../types'
 import OptimizedImage from '../OptimizedImage'
 import styles from './Projects.module.css'
 
-// Demo project data
-const defaultProjects: Project[] = [
+// Demo project data - will be populated with translations
+const createDefaultProjects = (t: (key: string) => string): Project[] => [
   {
     id: '1',
-    title: 'Modern Portfolio Website',
-    description: 'A high-performance portfolio built with React 19, TypeScript, and cutting-edge CSS features including container queries, CSS nesting, and CSS Modules for optimal user experience.',
+    title: t('projects.items.portfolio.title'),
+    description: t('projects.items.portfolio.description'),
     image: '/images/projects/portfolio-website-screenshot.png', // Example: Add your screenshot here
     imageAlt: 'Screenshot of Modern Portfolio Website homepage showing hero section and project cards',
     techStack: [
@@ -27,8 +27,8 @@ const defaultProjects: Project[] = [
   },
   {
     id: '2',
-    title: 'E-Commerce Platform (Placeholder)',
-    description: 'Full-stack e-commerce solution with modern payment integration, real-time inventory management, and advanced analytics dashboard.',
+    title: t('projects.items.ecommerce.title'),
+    description: t('projects.items.ecommerce.description'),
     techStack: [
       { name: 'Next.js', type: 'frontend' },
       { name: 'Node.js', type: 'backend' },
@@ -41,8 +41,8 @@ const defaultProjects: Project[] = [
   },
   {
     id: '3',
-    title: 'Task Management App (Placeholder)',
-    description: 'Collaborative task management application with real-time updates, team collaboration features, and advanced project tracking.',
+    title: t('projects.items.taskManagement.title'),
+    description: t('projects.items.taskManagement.description'),
     techStack: [
       { name: 'React', type: 'frontend' },
       { name: 'Express', type: 'backend' },
@@ -55,8 +55,8 @@ const defaultProjects: Project[] = [
   },
   {
     id: '4',
-    title: 'AI Content Generator (Placeholder)',
-    description: 'AI-powered content generation platform with natural language processing, multiple output formats, and custom model training.',
+    title: t('projects.items.aiContent.title'),
+    description: t('projects.items.aiContent.description'),
     techStack: [
       { name: 'Python', type: 'backend' },
       { name: 'React', type: 'frontend' },
@@ -69,8 +69,8 @@ const defaultProjects: Project[] = [
   },
   {
     id: '5',
-    title: 'Analytics Dashboard (Placeholder)',
-    description: 'Real-time analytics dashboard with interactive charts, data visualization, and automated reporting for business intelligence.',
+    title: t('projects.items.analytics.title'),
+    description: t('projects.items.analytics.description'),
     techStack: [
       { name: 'Vue.js', type: 'frontend' },
       { name: 'Laravel', type: 'backend' },
@@ -83,8 +83,8 @@ const defaultProjects: Project[] = [
   },
   {
     id: '6',
-    title: 'Mobile Fitness App (Placeholder)',
-    description: 'Cross-platform mobile application for fitness tracking, workout planning, and social features with gamification elements.',
+    title: t('projects.items.fitness.title'),
+    description: t('projects.items.fitness.description'),
     techStack: [
       { name: 'React Native', type: 'frontend' },
       { name: 'Firebase', type: 'backend' },
@@ -100,7 +100,7 @@ const defaultProjects: Project[] = [
 const Projects: React.FC<ProjectsProps> = ({
   title,
   subtitle,
-  projects = defaultProjects,
+  projects,
   loading = false
 }) => {
   const { t } = useTranslation();
@@ -111,6 +111,10 @@ const Projects: React.FC<ProjectsProps> = ({
   
   const finalTitle = title || defaultTitle;
   const finalSubtitle = subtitle || defaultSubtitle;
+  
+  // Create default projects with translations
+  const defaultProjects = createDefaultProjects(t);
+  const finalProjects = projects || defaultProjects;
 
   const getStatusText = (status: ProjectStatus): string => {
     const statusMap: Record<ProjectStatus, string> = {
@@ -288,7 +292,7 @@ const Projects: React.FC<ProjectsProps> = ({
         
         {/* Projects Grid */}
         <div className={styles.projectsGrid}>
-          {projects.map(renderProjectCard)}
+          {finalProjects.map(renderProjectCard)}
         </div>
       </div>
     </section>

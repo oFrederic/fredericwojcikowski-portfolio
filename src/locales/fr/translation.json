@@ -18,60 +18,60 @@
   },
   "hero": {
     "title": "Frédéric Wojcikowski",
-    "subtitle": "Ingénieur Frontend spécialisé dans React, Vue.js et la modernisation de systèmes legacy. Plus de 4 ans à transformer des idées complexes en applications web évolutives sur les marchés japonais et internationaux.",
+    "subtitle": "Ingénieur Frontend spécialisé en React et Vue.js, avec une expertise reconnue dans la modernisation de systèmes legacy. Plus de 4 années consacrées à la transformation de concepts complexes en applications web performantes, pour des marchés japonais et internationaux.",
     "actions": {
-      "exploreProjects": "Explorer les projets",
+      "exploreProjects": "Découvrir mes projets",
       "contactMe": "Me contacter"
     },
-    "scrollIndicator": "Faites défiler pour explorer"
+    "scrollIndicator": "Défilez pour explorer"
   },
   "projects": {
     "title": "Mes Projets",
-    "subtitle": "Une vitrine de travaux récents démontrant les pratiques modernes de développement web, l'optimisation des performances et la conception centrée sur l'utilisateur.",
+    "subtitle": "Sélection de réalisations récentes démontrant l'adoption de pratiques modernes en développement web, l'optimisation des performances et une approche centrée sur l'expérience utilisateur.",
     "status": {
       "completed": "Terminé",
       "inProgress": "En cours"
     },
     "actions": {
-      "liveDemo": "Démo en direct",
-      "viewCode": "Voir le code"
+      "liveDemo": "Voir la démo",
+      "viewCode": "Consulter le code"
     },
-    "featured": "Mis en avant",
+    "featured": "Projet vedette",
     "items": {
       "portfolio": {
-        "title": "Site Portfolio Moderne",
-        "description": "Un portfolio haute performance construit avec React 19, TypeScript et des fonctionnalités CSS de pointe incluant les requêtes de conteneur, l'imbrication CSS et les modules CSS pour une expérience utilisateur optimale."
+        "title": "Portfolio Moderne",
+        "description": "Portfolio haute performance développé avec React 19, TypeScript et des fonctionnalités CSS avancées incluant les requêtes de conteneur, l'imbrication CSS et les modules CSS pour une expérience utilisateur optimale."
       },
       "ecommerce": {
-        "title": "Plateforme E-commerce (Placeholder)",
-        "description": "Solution e-commerce full-stack avec intégration de paiement moderne, gestion d'inventaire en temps réel et tableau de bord d'analyse avancé."
+        "title": "Plateforme E-commerce (Projet type)",
+        "description": "Solution e-commerce complète avec intégration de paiement moderne, gestion d'inventaire en temps réel et tableau de bord d'analyse avancé."
       },
       "taskManagement": {
-        "title": "Application de Gestion de Tâches (Placeholder)",
-        "description": "Application de gestion de tâches collaborative avec mises à jour en temps réel, fonctionnalités de collaboration d'équipe et suivi de projet avancé."
+        "title": "Application de Gestion de Tâches (Projet type)",
+        "description": "Application collaborative de gestion de tâches avec mises à jour en temps réel, fonctionnalités de travail d'équipe et suivi de projet avancé."
       },
       "aiContent": {
-        "title": "Générateur de Contenu IA (Placeholder)",
-        "description": "Plateforme de génération de contenu alimentée par l'IA avec traitement du langage naturel, formats de sortie multiples et formation de modèles personnalisés."
+        "title": "Générateur de Contenu IA (Projet type)",
+        "description": "Plateforme de génération de contenu alimentée par l'intelligence artificielle avec traitement du langage naturel, formats de sortie multiples et formation de modèles personnalisés."
       },
       "analytics": {
-        "title": "Tableau de Bord Analytique (Placeholder)",
+        "title": "Tableau de Bord Analytique (Projet type)",
         "description": "Tableau de bord analytique en temps réel avec graphiques interactifs, visualisation de données et rapports automatisés pour l'intelligence d'affaires."
       },
       "fitness": {
-        "title": "Application Mobile de Fitness (Placeholder)",
+        "title": "Application Mobile de Fitness (Projet type)",
         "description": "Application mobile multiplateforme pour le suivi de fitness, la planification d'entraînement et les fonctionnalités sociales avec éléments de gamification."
       }
     }
   },
   "about": {
-    "title": "À Propos de Moi",
+    "title": "À Propos",
     "bio": {
-      "main": "Ingénieur frontend qualifié avec plus de 4 ans d'expérience incluant React, Vue.js et Ember.js, ainsi que TypeScript et des solutions de gestion d'état. Mon parcours a commencé par l'auto-apprentissage au Japon, suivi du bootcamp Code Chrysalis, puis progressé de la construction de MVP de startups à partir de zéro à mon rôle actuel chez TableCheck où je gère le développement de plateformes duales tout en mentorant des ingénieurs juniors. J'ai prouvé ma capacité à livrer des projets et fonctionnalités complexes dans des délais serrés, et j'excelle dans la collaboration interculturelle au sein d'environnements d'affaires japonais.",
-      "hobby": "Quand je ne code pas, vous pouvez me trouver en train d'explorer de nouvelles technologies, de contribuer à des projets open source, ou de partager des connaissances avec la communauté des développeurs à travers des blogs et des conférences."
+      "main": "Ingénieur frontend expérimenté avec plus de 4 années d'expertise en React, Vue.js et Ember.js, ainsi qu'en TypeScript et solutions de gestion d'état. Mon parcours a débuté par l'auto-formation au Japon, suivi du bootcamp Code Chrysalis, puis évolué de la création de MVP pour startups à mon rôle actuel chez TableCheck où je supervise le développement de plateformes duales tout en encadrant des ingénieurs juniors. J'ai démontré ma capacité à livrer des projets et fonctionnalités complexes dans des délais contraints, et j'excelle dans la collaboration interculturelle au sein d'environnements d'affaires japonais.",
+      "hobby": "En dehors du développement, je consacre mon temps à l'exploration de nouvelles technologies, la contribution à des projets open source, et le partage de connaissances avec la communauté des développeurs via des blogs et des conférences."
     },
     "techStack": {
-      "title": "Stack Technique",
+      "title": "Technologies",
       "categories": {
         "frontend": {
           "title": "Frontend",
@@ -92,41 +92,41 @@
       }
     },
     "experience": {
-      "title": "Expérience",
+      "title": "Expérience Professionnelle",
       "items": {
         "tablecheck": {
           "title": "Ingénieur Frontend",
           "company": "TableCheck - Tokyo, Japon",
           "period": "Décembre 2021 - Présent",
-          "description": "Dirige le développement de plateformes duales pour l'écosystème de gestion de restaurants. Gère la modernisation de codebase legacy (Ember.js v2 vers v6, CoffeeScript vers TypeScript), implémente la refonte du système de design et mentore des ingénieurs juniors. Spécialisé dans React, Redux, Xstate et Ember.js."
+          "description": "Supervise le développement de plateformes duales pour l'écosystème de gestion de restaurants. Gère la modernisation de codebase legacy (Ember.js v2 vers v6, CoffeeScript vers TypeScript), implémente la refonte du système de design et encadre des ingénieurs juniors. Spécialisé dans React, Redux, Xstate et Ember.js."
         },
         "neopa": {
           "title": "Ingénieur Frontend",
           "company": "Neopa - Shibuya, Japon",
           "period": "Juillet 2021 - Décembre 2021",
-          "description": "Développé des applications web personnalisées pour divers clients en utilisant Vue.js, TypeScript et Nuxt. Livré avec succès une plateforme de cartographie de transport en temps réel pour un client entreprise majeur dans un délai de 4 mois. Adapté à un environnement de travail entièrement japonais."
+          "description": "Développé des applications web sur mesure pour divers clients en utilisant Vue.js, TypeScript et Nuxt. Livré avec succès une plateforme de cartographie de transport en temps réel pour un client entreprise majeur dans un délai de 4 mois. Adapté à un environnement de travail entièrement japonais."
         },
         "airamp": {
           "title": "Ingénieur Frontend (Freelance)",
           "company": "Airamp - Fukuoka, Japon",
           "period": "Avril 2021 - Juillet 2021",
-          "description": "Construit une plateforme de streaming de partage de revenus MVP à partir de zéro en utilisant React, Redux, TypeScript et Next.js. Établi une architecture de codebase complète et une bibliothèque de composants pour une plateforme de création de contenu collaborative."
+          "description": "Conçu et développé une plateforme de streaming de partage de revenus MVP à partir de zéro en utilisant React, Redux, TypeScript et Next.js. Établi une architecture de codebase complète et une bibliothèque de composants pour une plateforme de création de contenu collaborative."
         }
       }
     },
     "stats": {
-      "title": "En Chiffres",
+      "title": "En Quelques Chiffres",
       "items": {
         "experience": { "number": "4+", "label": "Années d'expérience" },
-        "languages": { "number": "3", "label": "Langues parlées" },
-        "technologies": { "number": "8+", "label": "Technologies" },
+        "languages": { "number": "3", "label": "Langues maîtrisées" },
+        "technologies": { "number": "8+", "label": "Technologies maîtrisées" },
         "platforms": { "number": "2", "label": "Plateformes gérées" }
       }
     }
   },
   "contact": {
-    "title": "Contactons-nous",
-    "subtitle": "Prêt à collaborer sur votre prochain projet ? Je suis passionné par la création d'expériences web exceptionnelles et j'aimerais discuter de la façon dont nous pouvons donner vie à vos idées. Construisons quelque chose d'incroyable ensemble.",
+    "title": "Contact",
+    "subtitle": "Prêt à collaborer sur votre prochain projet ? Passionné par la création d'expériences web exceptionnelles, je serais ravi d'échanger sur la façon dont nous pouvons concrétiser vos idées. Créons ensemble quelque chose d'extraordinaire.",
     "form": {
       "title": "Envoyez-moi un message",
       "fields": {
@@ -140,7 +140,7 @@
           "label": "Email",
           "placeholder": "votre.email@exemple.com",
           "required": "L'email est requis",
-          "invalid": "Veuillez entrer une adresse email valide"
+          "invalid": "Veuillez saisir une adresse email valide"
         },
         "subject": {
           "label": "Sujet",
@@ -150,7 +150,7 @@
         },
         "message": {
           "label": "Message",
-          "placeholder": "Parlez-moi de votre projet, de la timeline et de toute exigence spécifique...",
+          "placeholder": "Décrivez votre projet, les délais et toute exigence spécifique...",
           "required": "Le message est requis",
           "minLength": "Le message doit contenir au moins 10 caractères",
           "help": "Minimum 10 caractères requis"
@@ -158,30 +158,31 @@
       },
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
-      "success": "Merci ! Votre message a été envoyé avec succès. Je vous répondrai bientôt !",
-      "error": "Oups ! Quelque chose s'est mal passé. Veuillez réessayer ou me contacter directement par email.",
-      "rateLimit": "Veuillez attendre une minute avant d'envoyer un autre message."
+      "success": "Merci ! Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais !",
+      "error": "Une erreur s'est produite. Veuillez réessayer ou me contacter directement par email.",
+      "rateLimit": "Veuillez patienter une minute avant d'envoyer un nouveau message."
     },
     "methods": {
       "email": {
         "title": "Email",
-        "description": "Meilleure façon de me joindre"
+        "description": "Moyen de contact privilégié"
       },
       "linkedin": {
         "title": "LinkedIn",
-        "description": "Réseautage professionnel"
+        "description": "Réseau professionnel"
       },
       "location": {
         "title": "Localisation",
-        "description": "Disponible pour le travail à distance dans le monde entier"
+        "description": "Disponible pour le travail à distance dans le monde entier",
+        "value": "Ichikawa, Chiba, Japan"
       },
       "responseTime": {
-        "title": "Temps de réponse",
+        "title": "Délai de réponse",
         "description": "Communication rapide et fiable"
       }
     },
     "social": {
-      "title": "Connectez-vous avec moi"
+      "title": "Suivez-moi"
     }
   },
   "common": {

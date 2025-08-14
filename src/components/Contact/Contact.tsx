@@ -34,17 +34,17 @@ const validation: Record<keyof ContactFormData, ValidationRule> = {
   }
 };
 
-// Default contact methods
-const defaultContactMethods: ContactMethod[] = [
+// Default contact methods - will be populated with translations
+const createDefaultContactMethods = (t: (key: string) => string): ContactMethod[] => [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
       </svg>
     ),
-    title: 'Email',
+    title: t('contact.methods.email.title'),
     value: 'wojcikowskif@gmail.com',
-    description: 'Best way to reach me',
+    description: t('contact.methods.email.description'),
     link: 'mailto:wojcikowskif@gmail.com'
   },
   {
@@ -53,9 +53,9 @@ const defaultContactMethods: ContactMethod[] = [
         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
       </svg>
     ),
-    title: 'LinkedIn',
+    title: t('contact.methods.linkedin.title'),
     value: 'linkedin.com/in/ofrederic',
-    description: 'Professional networking',
+    description: t('contact.methods.linkedin.description'),
     link: 'https://linkedin.com/in/ofrederic'
   },
   {
@@ -64,9 +64,9 @@ const defaultContactMethods: ContactMethod[] = [
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
       </svg>
     ),
-    title: 'Location',
-    value: 'Ichikawa, Chiba, Japan',
-    description: 'Available for remote work globally'
+    title: t('contact.methods.location.title'),
+    value: t('contact.methods.location.value'),
+    description: t('contact.methods.location.description')
   },
   {
     icon: (
@@ -74,9 +74,9 @@ const defaultContactMethods: ContactMethod[] = [
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
       </svg>
     ),
-    title: 'Response Time',
+    title: t('contact.methods.responseTime.title'),
     value: '< 24 hours',
-    description: 'Quick and reliable communication'
+    description: t('contact.methods.responseTime.description')
   }
 ];
 
@@ -114,7 +114,7 @@ const defaultSocialLinks: SocialLink[] = [
 const Contact: React.FC<ContactProps> = ({
   title,
   subtitle,
-  contactMethods = defaultContactMethods,
+  contactMethods,
   socialLinks = defaultSocialLinks
 }) => {
   const { t } = useTranslation();
@@ -125,6 +125,10 @@ const Contact: React.FC<ContactProps> = ({
   
   const finalTitle = title || defaultTitle;
   const finalSubtitle = subtitle || defaultSubtitle;
+  
+  // Create default contact methods with translations
+  const defaultContactMethodsData = createDefaultContactMethods(t);
+  const finalContactMethods = contactMethods || defaultContactMethodsData;
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -280,7 +284,7 @@ const Contact: React.FC<ContactProps> = ({
             
             {/* Contact Methods */}
             <div className={styles.contactMethods}>
-              {contactMethods.map((method, index) => (
+              {finalContactMethods.map((method, index) => (
                 <div key={index} className={styles.contactMethod}>
                   <div className={styles.methodIcon}>
                     {method.icon}
