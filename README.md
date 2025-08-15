@@ -1,66 +1,84 @@
-# 🚀 Modern React Portfolio
+# 🚀 Frederic Wojcikowski - Frontend Engineer Portfolio
 
 <div align="center">
 
-![Portfolio Banner](https://via.placeholder.com/1200x300/2563eb/ffffff?text=Modern+React+Portfolio)
+![Portfolio Banner](https://via.placeholder.com/1200x300/2563eb/ffffff?text=Frederic+Wojcikowski+Portfolio)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=netlify)](https://fredericwojcikowski-portfolio.netlify.app/)
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-100%2F100-success?style=flat-square&logo=lighthouse)](https://web.dev/performance-scoring/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-61dafb?style=flat-square&logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.0.6-646cff?style=flat-square&logo=vite)](https://vitejs.dev/)
 
-**A high-performance, modern portfolio built with cutting-edge web technologies**
+**A high-performance, modern portfolio showcasing frontend engineering expertise**
 
-[🌟 Live Demo](#) • [📊 Performance Report](./WEB_OPTIMIZATION_REPORT.md)
+[🌟 Live Demo](https://fredericwojcikowski-portfolio.netlify.app/) • [📊 Performance Report](./WEB_OPTIMIZATION_REPORT.md) • [💼 LinkedIn](https://linkedin.com/in/fredericwojcikowski)
 
 </div>
 
 ---
 
-## ✨ Highlights
+## 👨‍💻 About Me
 
-- **Perfect Performance**: 100/100 Lighthouse scores across all metrics
-- **Modern Tech Stack**: React 19, TypeScript, Vite, Modern CSS
-- **Optimized Bundle**: 73kB gzipped with strategic code splitting
-- **Responsive Design**: Mobile-first with CSS Container Queries
-- **Accessibility**: Full WCAG compliance and keyboard navigation
-- **Theme Switching**: Light, dark, and system theme modes with persistent preferences
-- **Internationalization**: Multi-language support (English, Japanese, French) with automatic detection
+I'm **Frederic Wojcikowski**, a Frontend Engineer with over 4 years of experience specializing in React, Vue.js, and legacy system modernization. Based in Tokyo, Japan, I transform complex concepts into scalable web applications for Japanese and international markets.
+
+### 🎯 Core Expertise
+- **Modern Frontend Development**: React 19, TypeScript, Vue.js, Ember.js
+- **Legacy System Modernization**: CoffeeScript to TypeScript migration, Ember.js v2 to v6 upgrades
+- **Performance Optimization**: 100/100 Lighthouse scores, Core Web Vitals optimization
+- **Cross-Cultural Collaboration**: Experience in Japanese business environments
+- **Team Leadership**: Mentoring junior engineers and overseeing dual-platform development
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Portfolio Highlights
 
-**Core Technologies**
+- **Perfect Performance**: 100/100 Lighthouse scores across all metrics
+- **Modern Tech Stack**: React 19, TypeScript, Vite, Modern CSS with Container Queries
+- **Optimized Bundle**: 73kB gzipped with strategic code splitting
+- **Responsive Design**: Mobile-first with CSS Container Queries and modern layouts
+- **Accessibility**: Full WCAG compliance and keyboard navigation
+- **Theme System**: Light, dark, and system theme modes with persistent preferences
+- **Internationalization**: Multi-language support (English, Japanese, French) with automatic detection
+- **Performance Monitoring**: Automated Lighthouse CI and bundle analysis
+
+---
+
+## 🛠️ Technical Stack
+
+### **Core Technologies**
 - **React 19** - Latest features and optimizations
 - **TypeScript** - Strict mode for type safety
 - **Vite** - Lightning-fast build tool and dev server
 - **Modern CSS** - Container Queries, Nesting, CSS Modules
 
-**User Experience**
-- **Theme System** - Light, dark, and system theme modes with Context API
-- **Internationalization** - react-i18next with automatic language detection
-- **Language Support** - English, Japanese, and French translations
+### **Frontend Expertise**
+- **React Ecosystem**: React 19, Redux, Context API, React Hooks
+- **Vue.js**: Vue 3, Vuex, Nuxt.js
+- **Legacy Systems**: Ember.js v2-v6, CoffeeScript migration
+- **State Management**: Redux, Xstate, Vuex, Context API
+- **Testing**: Jest, Enzyme, Storybook, Vitest
 
-**Performance & Quality**
+### **Performance & Quality**
 - **Lighthouse CI** - Automated performance testing
 - **ESLint + Prettier** - Code quality and formatting
 - **Bundle Analysis** - Size optimization and monitoring
+- **Image Optimization** - WebP conversion and lazy loading
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+
+- Node.js 20+
 - npm or yarn
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/modern-react-portfolio.git
-cd modern-react-portfolio
+git clone https://github.com/oFrederic/fredericwojcikowski-portfolio.git
+cd fredericwojcikowski-portfolio
 
 # Install dependencies
 npm install
@@ -77,99 +95,7 @@ npm run build        # Build for production
 npm run preview      # Preview production build
 npm run lint         # Run ESLint
 npm run lighthouse   # Run performance audit
-```
-
----
-
-## 📷 Adding Project Screenshots
-
-### Quick Setup
-1. **Add your screenshot image** to the `public/images/projects/` folder
-2. **Optimize the image** by running `npm run optimize-images`
-3. **Update your project data** in `src/components/Projects/Projects.tsx`
-
-### Step-by-Step Guide
-
-#### 1. Take Your Screenshot
-**Easy browser method** (recommended):
-1. Run `npm run preview` to start your site
-2. Open `http://localhost:4173` in Chrome/Edge
-3. Press `F12` → `Ctrl+Shift+P` → type "screenshot"
-4. Select **"Capture full size screenshot"**
-5. Save to `public/images/projects/`
-
-#### 2. Optimize Your Images 
-**Run the optimization script** (this creates WebP versions):
-```bash
-npm run optimize-images
-```
-
-**What this does:**
-- Creates WebP versions of PNG/JPG files (typically 70-90% smaller!)
-- Keeps original files as fallbacks for older browsers
-- Only processes new/changed images (smart caching)
-- Works for both projects and profile folders
-
-**Example output:**
-```
-✅ portfolio-screenshot.png → portfolio-screenshot.webp
-   802.6 KB → 27.2 KB (96.6% smaller)
-```
-
-#### 3. Update Your Project
-In `src/components/Projects/Projects.tsx`, find your project in the `defaultProjects` array and add the `image` property:
-
-```tsx
-{
-  id: '1',
-  title: 'My Awesome Project',
-  description: 'A cool project I built...',
-  image: '/images/projects/my-project-screenshot.png', // ✅ Add this line
-  imageAlt: 'Screenshot of My Awesome Project homepage', // ✅ And this line (optional)
-  techStack: [
-    // your tech stack...
-  ],
-  // rest of your project data...
-}
-```
-
-#### 4. That's It! 
-- **Modern browsers**: Automatically load tiny WebP versions
-- **Older browsers**: Fall back to original PNG/JPG files
-- **Lazy loading**: Images only load when scrolled into view
-
-### 🚀 **Image Optimization Features**
-Your images get **optimized manually** with:
-- ✅ **WebP conversion** (70-90% smaller files)
-- ✅ **Smart fallbacks** (PNG/JPG for older browsers)
-- ✅ **Lazy loading** (loads when scrolled into view)
-- ✅ **Responsive sizing** (different sizes for mobile/desktop)
-- ✅ **Manual control** (you decide when to optimize)
-
-### 💡 Pro Tips
-
-#### Best Practices
-- **File size**: Any size is fine - optimization script handles it
-- **Formats**: PNG, JPG work best (avoid GIF for screenshots)
-- **Naming**: Use descriptive names like `ecommerce-homepage.png`
-- **Alt text**: Always add `imageAlt` for accessibility
-
-#### When to Run Optimization
-```bash
-# After adding new screenshots
-npm run optimize-images
-
-# Before deploying to production
-npm run optimize-images && npm run build
-```
-
-#### File Structure After Optimization
-```
-public/images/projects/
-├── my-project.png        ← Original (fallback)
-├── my-project.webp       ← Optimized (auto-created)
-├── another-project.jpg   ← Original (fallback)  
-└── another-project.webp  ← Optimized (auto-created)
+npm run optimize-images # Optimize project images
 ```
 
 ---
@@ -202,13 +128,13 @@ public/images/projects/
 ```
 src/
 ├── components/          # React components
-│   ├── Hero/           # Landing section
-│   ├── Projects/       # Portfolio showcase
-│   ├── About/          # About section
-│   ├── Contact/        # Contact form
+│   ├── Hero/           # Landing section with animated tech stack
+│   ├── Projects/       # Portfolio showcase with lazy loading
+│   ├── About/          # Professional experience and skills
+│   ├── Contact/        # Contact form with validation
 │   └── Navigation/     # Navigation with theme/language toggles
 ├── contexts/           # React Context providers
-│   └── ThemeContext.tsx # Theme management
+│   └── ThemeContext.tsx # Theme management system
 ├── hooks/              # Custom React hooks
 │   ├── useTheme.ts     # Theme utilities
 │   └── useLanguage.ts  # Language management
@@ -226,28 +152,76 @@ src/
 
 ---
 
-## 🌟 Features
+## 🌟 Key Features
 
-### Theme System
+### **Theme System**
 - **Multiple Themes**: Light, dark, and system theme modes
 - **Persistent Preferences**: Theme choice saved in localStorage
 - **System Integration**: Automatically follows OS theme preference
 - **Smooth Transitions**: CSS transitions for theme switching
 - **Accessibility**: High contrast ratios maintained across themes
 
-### Internationalization (i18n)
+### **Internationalization (i18n)**
 - **Multi-Language Support**: English, Japanese, and French
 - **Automatic Detection**: Detects browser language preference
 - **Language Persistence**: Selected language saved in localStorage
 - **SEO Optimized**: Dynamic `lang` attribute updates
 - **Flag Icons**: Visual language selection with country flags
-- **Comprehensive Coverage**: All UI text translated across components
 
-### Language Features
-- **Translation Keys**: Organized by component and section
-- **Fallback System**: Graceful fallback to English for missing translations
-- **Context-Aware**: Proper pluralization and interpolation support
-- **Developer Friendly**: Type-safe translation keys with TypeScript
+### **Performance Optimizations**
+- **Code Splitting**: Lazy loading of non-critical components
+- **Image Optimization**: WebP conversion with fallbacks
+- **Bundle Analysis**: Continuous monitoring of bundle size
+- **Resource Hints**: Preloading critical resources
+- **Web Vitals**: Real-time performance monitoring
+
+---
+
+## 📷 Adding Project Screenshots
+
+### Quick Setup
+1. **Add your screenshot image** to the `public/images/projects/` folder
+2. **Optimize the image** by running `npm run optimize-images`
+3. **Update your project data** in `src/components/Projects/Projects.tsx`
+
+### Step-by-Step Guide
+
+#### 1. Take Your Screenshot
+**Easy browser method** (recommended):
+1. Run `npm run preview` to start your site
+2. Open `http://localhost:4173` in Chrome/Edge
+3. Press `F12` → `Ctrl+Shift+P` → type "screenshot"
+4. Select **"Capture full size screenshot"**
+5. Save to `public/images/projects/`
+
+#### 2. Optimize Your Images 
+**Run the optimization script** (this creates WebP versions):
+```bash
+npm run optimize-images
+```
+
+**What this does:**
+- Creates WebP versions of PNG/JPG files (typically 70-90% smaller!)
+- Keeps original files as fallbacks for older browsers
+- Only processes new/changed images (smart caching)
+- Works for both projects and profile folders
+
+#### 3. Update Your Project
+In `src/components/Projects/Projects.tsx`, find your project in the `defaultProjects` array and add the `image` property:
+
+```tsx
+{
+  id: '1',
+  title: 'My Awesome Project',
+  description: 'A cool project I built...',
+  image: '/images/projects/my-project-screenshot.png', // ✅ Add this line
+  imageAlt: 'Screenshot of My Awesome Project homepage', // ✅ And this line
+  techStack: [
+    // your tech stack...
+  ],
+  // rest of your project data...
+}
+```
 
 ---
 
@@ -272,6 +246,42 @@ npm run lint            # Code quality check
 - **Lighthouse**: 100/100 (current: 100/100) ✅
 - **Build Time**: <3s (current: 2s) ✅
 - **LCP**: <1s (current: 715ms) ✅
+
+---
+
+## 💼 Professional Experience
+
+### **TableCheck - Tokyo, Japan** (December 2021 - Present)
+**Frontend Engineer**
+- Oversee dual-platform development while mentoring junior engineers
+- Deliver complex projects and features under tight deadlines
+- Excel in cross-cultural collaboration within Japanese business environments
+
+### **Neopa - Tokyo, Japan** (Previous Experience)
+**Frontend Developer**
+- Built startup MVPs from scratch
+- Implemented modern frontend architectures
+- Collaborated with international teams
+
+### **Code Chrysalis Bootcamp** (Education)
+- Intensive full-stack development program
+- Focus on modern JavaScript and React development
+- Project-based learning with real-world applications
+
+---
+
+## 🌐 Browser Compatibility
+
+### **Overall Compatibility Score: 93.5% ✅**
+
+| Feature | Support | Status | Fallback |
+|---------|---------|--------|----------|
+| **CSS Container Queries** | 91.2% | ✅ | Media queries |
+| **CSS Nesting** | 87.4% | ⚠️ | PostCSS compilation |
+| **CSS Cascade Layers** | 89.7% | ⚠️ | CSS specificity |
+| **React 19** | 95.3% | ✅ | Full support |
+| **ES2022 Features** | 92.1% | ✅ | Modern browsers |
+| **Intersection Observer** | 95.7% | ✅ | Lazy loading |
 
 ---
 
@@ -302,14 +312,26 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ---
 
+## 📞 Get In Touch
+
+<div align="center">
+
+**Let's connect and discuss how I can help with your next project!**
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://fredericwojcikowski-portfolio.netlify.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/fredericwojcikowski)
+[![Email](https://img.shields.io/badge/Email-Contact-ea4335?style=for-the-badge&logo=gmail)](mailto:wojcikowskif@gmail.com)
+
+**⭐ Star this repository if you found it helpful!**
+
+</div>
+
+---
+
 <div align="center">
 
 **Built with ❤️ using modern web technologies**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://your-portfolio-url.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
-[![Email](https://img.shields.io/badge/Email-Contact-ea4335?style=for-the-badge&logo=gmail)](mailto:your.email@example.com)
-
-**⭐ Star this repository if you found it helpful!**
+*Performance-focused, accessible, and beautifully designed*
 
 </div>
