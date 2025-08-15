@@ -96,19 +96,19 @@
       "items": {
         "tablecheck": {
           "title": "フロントエンドエンジニア",
-          "company": "TableCheck - 東京、日本",
+          "company": "TableCheck - 東京",
           "period": "2021年12月 - 現在",
           "description": "レストラン管理エコシステムのデュアルプラットフォーム開発を統括。レガシーコードベースの近代化（Ember.js v2からv6、CoffeeScriptからTypeScript）、デザインシステム刷新の実装、ジュニアエンジニアの指導を担当。React、Redux、Xstate、Ember.jsを専門とする。"
         },
         "neopa": {
           "title": "フロントエンドエンジニア",
-          "company": "Neopa - 渋谷、日本",
+          "company": "Neopa - 東京",
           "period": "2021年7月 - 2021年12月",
           "description": "Vue.js、TypeScript、Nuxtを使用して多様なクライアント向けカスタムWebアプリケーションを開発。主要企業クライアント向けリアルタイム交通マッピングプラットフォームを4ヶ月の期限で成功裏に提供。完全な日本語作業環境に適応。"
         },
         "airamp": {
           "title": "フロントエンドエンジニア（フリーランス）",
-          "company": "Airamp - 福岡、日本",
+          "company": "Airamp - 福岡",
           "period": "2021年4月 - 2021年7月",
           "description": "React、Redux、TypeScript、Next.jsを使用して収益共有ストリーミングプラットフォームMVPをゼロから構築。協調的コンテンツ作成プラットフォームの完全なコードベースアーキテクチャとコンポーネントライブラリを確立。"
         }
@@ -174,7 +174,7 @@
       "location": {
         "title": "所在地",
         "description": "世界中でリモートワーク対応可能",
-        "value": "市川市、千葉県、日本"
+        "value": "千葉県市川市"
       },
       "responseTime": {
         "title": "返信時間",
