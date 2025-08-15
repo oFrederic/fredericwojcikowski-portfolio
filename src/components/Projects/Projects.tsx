@@ -16,84 +16,34 @@ const createDefaultProjects = (t: (key: string) => string): Project[] => [
     techStack: [
       { name: 'React 19', type: 'frontend' },
       { name: 'TypeScript', type: 'frontend' },
-      { name: 'Vite', type: 'tool' },
       { name: 'CSS Modules', type: 'frontend' },
-      { name: 'Container Queries', type: 'frontend' }
+      { name: 'Container Queries', type: 'frontend' },
+      { name: 'Vite', type: 'tool' },
+      { name: 'Netlify', type: 'tool' }
     ],
     liveUrl: 'https://fredericwojcikowski-portfolio.netlify.app/',
     githubUrl: 'https://github.com/oFrederic/fredericwojcikowski-portfolio',
-    status: PROJECT_STATUSES.IN_PROGRESS,
+    status: PROJECT_STATUSES.COMPLETED,
     featured: true
   },
   {
     id: '2',
-    title: t('projects.items.ecommerce.title'),
-    description: t('projects.items.ecommerce.description'),
+    title: t('projects.items.cineflex.title'),
+    description: t('projects.items.cineflex.description'),
     techStack: [
-      { name: 'Next.js', type: 'frontend' },
-      { name: 'Node.js', type: 'backend' },
-      { name: 'PostgreSQL', type: 'database' },
-      { name: 'Stripe', type: 'tool' }
+      { name: 'React 18', type: 'frontend' },
+      { name: 'TypeScript', type: 'frontend' },
+      { name: 'CSS Modules', type: 'frontend' },
+      { name: 'TMDB API', type: 'backend' },
+      { name: 'localStorage', type: 'database' },
+      { name: 'Vite', type: 'tool' },
+      { name: 'Zustand', type: 'tool' },
+      { name: 'TanStack Query', type: 'tool' },
+      { name: 'Netlify', type: 'tool' },
     ],
     liveUrl: '#',
-    githubUrl: '#',
-    status: PROJECT_STATUSES.COMPLETED
-  },
-  {
-    id: '3',
-    title: t('projects.items.taskManagement.title'),
-    description: t('projects.items.taskManagement.description'),
-    techStack: [
-      { name: 'React', type: 'frontend' },
-      { name: 'Express', type: 'backend' },
-      { name: 'MongoDB', type: 'database' },
-      { name: 'Socket.io', type: 'tool' }
-    ],
-    liveUrl: '#',
-    githubUrl: '#',
-    status: PROJECT_STATUSES.COMPLETED
-  },
-  {
-    id: '4',
-    title: t('projects.items.aiContent.title'),
-    description: t('projects.items.aiContent.description'),
-    techStack: [
-      { name: 'Python', type: 'backend' },
-      { name: 'React', type: 'frontend' },
-      { name: 'OpenAI', type: 'tool' },
-      { name: 'Redis', type: 'database' }
-    ],
-    liveUrl: '#',
-    githubUrl: '#',
-    status: PROJECT_STATUSES.IN_PROGRESS
-  },
-  {
-    id: '5',
-    title: t('projects.items.analytics.title'),
-    description: t('projects.items.analytics.description'),
-    techStack: [
-      { name: 'Vue.js', type: 'frontend' },
-      { name: 'Laravel', type: 'backend' },
-      { name: 'MySQL', type: 'database' },
-      { name: 'Chart.js', type: 'tool' }
-    ],
-    liveUrl: '#',
-    githubUrl: '#',
-    status: PROJECT_STATUSES.COMPLETED
-  },
-  {
-    id: '6',
-    title: t('projects.items.fitness.title'),
-    description: t('projects.items.fitness.description'),
-    techStack: [
-      { name: 'React Native', type: 'frontend' },
-      { name: 'Firebase', type: 'backend' },
-      { name: 'Firestore', type: 'database' },
-      { name: 'Expo', type: 'tool' }
-    ],
-    liveUrl: '#',
-    githubUrl: '#',
-    status: PROJECT_STATUSES.COMPLETED
+    githubUrl: 'https://github.com/oFrederic/cineflex',
+    status: PROJECT_STATUSES.IN_PROGRESS,
   }
 ];
 

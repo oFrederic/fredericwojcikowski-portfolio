@@ -42,25 +42,9 @@
         "title": "Portfolio Moderne",
         "description": "Portfolio haute performance développé avec React 19, TypeScript et des fonctionnalités CSS avancées incluant les requêtes de conteneur, l'imbrication CSS et les modules CSS pour une expérience utilisateur optimale."
       },
-      "ecommerce": {
-        "title": "Plateforme E-commerce (Projet type)",
-        "description": "Solution e-commerce complète avec intégration de paiement moderne, gestion d'inventaire en temps réel et tableau de bord d'analyse avancé."
-      },
-      "taskManagement": {
-        "title": "Application de Gestion de Tâches (Projet type)",
-        "description": "Application collaborative de gestion de tâches avec mises à jour en temps réel, fonctionnalités de travail d'équipe et suivi de projet avancé."
-      },
-      "aiContent": {
-        "title": "Générateur de Contenu IA (Projet type)",
-        "description": "Plateforme de génération de contenu alimentée par l'intelligence artificielle avec traitement du langage naturel, formats de sortie multiples et formation de modèles personnalisés."
-      },
-      "analytics": {
-        "title": "Tableau de Bord Analytique (Projet type)",
-        "description": "Tableau de bord analytique en temps réel avec graphiques interactifs, visualisation de données et rapports automatisés pour l'intelligence d'affaires."
-      },
-      "fitness": {
-        "title": "Application Mobile de Fitness (Projet type)",
-        "description": "Application mobile multiplateforme pour le suivi de fitness, la planification d'entraînement et les fonctionnalités sociales avec éléments de gamification."
+      "cineflex": {
+        "title": "CineFlex - Plateforme de Découverte Cinématographique",
+        "description": "Application de découverte de films inspirée de Netflix avec recherche avancée, défilement infini et listes de visionnage personnalisées. Développée avec React 18, TypeScript et des optimisations de performance modernes."
       }
     }
   },

@@ -42,25 +42,9 @@
         "title": "Modern Portfolio Website",
         "description": "A high-performance portfolio built with React 19, TypeScript, and cutting-edge CSS features including container queries, CSS nesting, and CSS Modules for optimal user experience."
       },
-      "ecommerce": {
-        "title": "E-Commerce Platform (Sample)",
-        "description": "Comprehensive e-commerce solution featuring modern payment integration, real-time inventory management, and advanced analytics dashboard."
-      },
-      "taskManagement": {
-        "title": "Task Management Application (Sample)",
-        "description": "Collaborative task management platform with real-time updates, team collaboration features, and advanced project tracking capabilities."
-      },
-      "aiContent": {
-        "title": "AI Content Generator (Sample)",
-        "description": "AI-powered content generation platform featuring natural language processing, multiple output formats, and custom model training capabilities."
-      },
-      "analytics": {
-        "title": "Analytics Dashboard (Sample)",
-        "description": "Real-time analytics dashboard with interactive charts, data visualization, and automated reporting for business intelligence."
-      },
-      "fitness": {
-        "title": "Mobile Fitness Application (Sample)",
-        "description": "Cross-platform mobile application for fitness tracking, workout planning, and social features with gamification elements."
+      "cineflex": {
+        "title": "CineFlex - Movie Discovery Platform",
+        "description": "A Netflix-inspired movie discovery application with advanced search, infinite scroll, and personalized watchlists. Built with React 18, TypeScript, and modern performance optimizations."
       }
     }
   },
