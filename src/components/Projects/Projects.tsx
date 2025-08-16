@@ -41,7 +41,7 @@ const createDefaultProjects = (t: (key: string) => string): Project[] => [
       { name: 'TanStack Query', type: 'tool' },
       { name: 'Netlify', type: 'tool' },
     ],
-    liveUrl: '#',
+    liveUrl: 'https://cineflex-movies.netlify.app/',
     githubUrl: 'https://github.com/oFrederic/cineflex',
     status: PROJECT_STATUSES.IN_PROGRESS,
   }
