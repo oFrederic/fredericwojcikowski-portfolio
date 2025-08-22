@@ -21,7 +21,7 @@ const createDefaultProjects = (t: (key: string) => string): Project[] => [
       { name: 'Vite', type: 'tool' },
       { name: 'Netlify', type: 'tool' }
     ],
-    liveUrl: 'https://fredericwojcikowski-portfolio.netlify.app/',
+    liveUrl: 'https://fredericwojcikowski.netlify.app/',
     githubUrl: 'https://github.com/oFrederic/fredericwojcikowski-portfolio',
     status: PROJECT_STATUSES.COMPLETED,
     featured: true

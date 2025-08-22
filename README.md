@@ -4,7 +4,7 @@
 
 ![Portfolio Banner](https://via.placeholder.com/1200x300/2563eb/ffffff?text=Frederic+Wojcikowski+Portfolio)
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=netlify)](https://fredericwojcikowski-portfolio.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=netlify)](https://fredericwojcikowski.netlify.app/)
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-100%2F100-success?style=flat-square&logo=lighthouse)](https://web.dev/performance-scoring/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-61dafb?style=flat-square&logo=react)](https://reactjs.org/)
@@ -12,7 +12,7 @@
 
 **A high-performance, modern portfolio showcasing frontend engineering expertise**
 
-[🌟 Live Demo](https://fredericwojcikowski-portfolio.netlify.app/) • [📊 Performance Report](./WEB_OPTIMIZATION_REPORT.md) • [💼 LinkedIn](https://linkedin.com/in/fredericwojcikowski)
+[🌟 Live Demo](https://fredericwojcikowski.netlify.app/) • [📊 Performance Report](./WEB_OPTIMIZATION_REPORT.md) • [💼 LinkedIn](https://linkedin.com/in/fredericwojcikowski)
 
 </div>
 
@@ -318,7 +318,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 **Let's connect and discuss how I can help with your next project!**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://fredericwojcikowski-portfolio.netlify.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://fredericwojcikowski.netlify.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/fredericwojcikowski)
 [![Email](https://img.shields.io/badge/Email-Contact-ea4335?style=for-the-badge&logo=gmail)](mailto:wojcikowskif@gmail.com)
 
