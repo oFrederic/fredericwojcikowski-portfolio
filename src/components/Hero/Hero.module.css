@@ -270,7 +270,6 @@
           gap: var(--space-xs);
           color: var(--color-hero-text);
           animation: orbit var(--orbit-duration, 20s) linear infinite;
-          animation-delay: calc(var(--start-angle, 0deg) / 360deg * var(--orbit-duration, 20s));
           z-index: var(--z-index, 1);
           
           /* Position icons in orbit */
