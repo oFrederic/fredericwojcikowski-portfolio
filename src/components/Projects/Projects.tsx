@@ -25,27 +25,6 @@ const createDefaultProjects = (t: (key: string) => string): Project[] => [
     githubUrl: 'https://github.com/oFrederic/fredericwojcikowski-portfolio',
     status: PROJECT_STATUSES.COMPLETED,
     featured: true
-  },
-  {
-    id: '2',
-    title: t('projects.items.cineflex.title'),
-    description: t('projects.items.cineflex.description'),
-    image: '/images/projects/cineflex-screenshot.png', // Example: Add your screenshot here
-    imageAlt: 'Screenshot of Cineflex Website homepage showing hero section and movie cards',
-    techStack: [
-      { name: 'React 18', type: 'frontend' },
-      { name: 'TypeScript', type: 'frontend' },
-      { name: 'CSS Modules', type: 'frontend' },
-      { name: 'TMDB API', type: 'backend' },
-      { name: 'localStorage', type: 'database' },
-      { name: 'Vite', type: 'tool' },
-      { name: 'Zustand', type: 'tool' },
-      { name: 'TanStack Query', type: 'tool' },
-      { name: 'Netlify', type: 'tool' },
-    ],
-    liveUrl: 'https://cineflex-movies.netlify.app/',
-    githubUrl: 'https://github.com/oFrederic/cineflex',
-    status: PROJECT_STATUSES.IN_PROGRESS,
   }
 ];
 
